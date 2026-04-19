@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeremie Nabet | Portfolio Web Developer</title>
-  <meta name="description" content="Portfolio de Jeremie Nabet, developper web certifie avec plus de 10 ans d'experience.">
+  <title>Jeremie Nabet | Senior Salesforce Full Stack Developer</title>
+  <meta name="description" content="Portfolio de Jeremie Nabet, Senior Salesforce Full Stack Developer (8x certifie), MuleSoft Developer et expert web/mobile.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -178,6 +178,91 @@
     }
     .card h3 { margin: 0 0 6px; font-size: 1.02rem; }
     .card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+    .timeline {
+      margin-top: 22px;
+      display: grid;
+      gap: 10px;
+    }
+    .timeline-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: linear-gradient(165deg, var(--surface), #f8efde);
+      padding: 14px;
+    }
+    .timeline-item h3 {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .timeline-item p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .trophy-scroller {
+      margin-top: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(165deg, var(--surface), #f8efde);
+      padding: 12px 0;
+      position: relative;
+    }
+    .trophy-track {
+      display: flex;
+      gap: 12px;
+      width: max-content;
+      padding: 0 12px;
+      animation: trophy-scroll 48s linear infinite;
+    }
+    .trophy-scroller:hover .trophy-track {
+      animation-play-state: paused;
+    }
+    .trophy-card {
+      min-width: 280px;
+      max-width: 280px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fff6e8;
+      padding: 12px;
+      display: grid;
+      gap: 6px;
+    }
+    .trophy-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .trophy-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 1px solid #d8b474;
+      background: rgba(200, 155, 60, 0.18);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+    .trophy-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.4;
+    }
+    .trophy-card a {
+      color: #8a6528;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+    @keyframes trophy-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
     .choice-meta {
       margin-top: 14px;
       color: var(--muted);
@@ -239,27 +324,23 @@
       gap: 10px;
       flex-wrap: wrap;
     }
-    .contact-list {
-      margin-top: 16px;
-      display: grid;
-      gap: 10px;
-      max-width: 720px;
+    .social-links {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-    .contact-item {
+    .social-links a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      background: linear-gradient(165deg, var(--surface), #f8efde);
-      padding: 12px 14px;
-      color: var(--muted);
-    }
-    .contact-item strong {
-      color: var(--text);
-      margin-right: 8px;
-    }
-    .contact-item a {
-      color: #8a6528;
-      text-decoration: underline;
-      text-underline-offset: 3px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #7a5a22;
+      background: rgba(200, 155, 60, 0.1);
+      text-decoration: none;
+      font-size: 0.95rem;
     }
     @media (max-width: 920px) {
       .hero-grid, .cards, .kpis { grid-template-columns: 1fr; }
@@ -274,8 +355,10 @@
       <nav class="nav-links">
         <a href="#about">A propos</a>
         <a href="#services">Services</a>
-        <a href="#showcase">Choix vitrine</a>
-        <a href="#contact" class="btn btn-primary">Me contacter</a>
+        <a href="#experience">Experience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#works">Oeuvres</a>
+        <a href="#showcase">Solutions</a>
       </nav>
     </div>
   </header>
@@ -285,19 +368,19 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Portfolio</p>
-          <h1>Jeremie Nabet, developper web certifie avec plus de 10 ans d'experience.</h1>
-          <p class="lead">Je conçois des sites vitrines modernes, performants et orientés conversion, avec une execution propre du design au deploiement.</p>
+          <h1>Jeremie Nabet, Senior Salesforce Full Stack Developer et MuleSoft Developer.</h1>
+          <p class="lead">Basé en Israel, j'interviens sur des ecosystèmes Salesforce complexes (Apex, LWC, integrations API) avec une approche orientee qualite, performance et impact metier.</p>
           <div class="hero-actions">
             <a href="#showcase" class="btn btn-primary">Choisir un design</a>
-            <a href="#contact" class="btn btn-outline">Demander un devis</a>
+            <a href="https://www.linkedin.com/in/jeremie-nabet/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Parler de votre projet</a>
           </div>
         </div>
         <aside class="hero-card">
           <h2>En bref</h2>
           <div class="kpis">
-            <div><strong>10+ ans</strong><span>experience</span></div>
-            <div><strong>120+</strong><span>projets</span></div>
-            <div><strong>100%</strong><span>sur mesure</span></div>
+            <div><strong>8x</strong><span>Salesforce certifie</span></div>
+            <div><strong>6+ ans</strong><span>experience totale</span></div>
+            <div><strong>500+</strong><span>connexions LinkedIn</span></div>
           </div>
         </aside>
       </div>
@@ -306,67 +389,163 @@
     <section id="about" class="section">
       <div class="container">
         <h2>A propos</h2>
-        <p class="section-lead">Je combine vision produit, design system et developpement front-end pour creer des experiences web fiables, rapides et evolutives.</p>
+        <p class="section-lead">Passionne de technologie, je suis specialise Salesforce depuis plus de 4 ans avec une experience en delivery enterprise, leadership technique et integrations avancees.</p>
       </div>
     </section>
 
     <section id="services" class="section">
       <div class="container">
         <h2>Services</h2>
-        <p class="section-lead">Accompagnement complet ou mission ciblee selon ton besoin.</p>
+        <p class="section-lead">Accompagnement complet ou mission ciblee selon ton besoin metier et technique.</p>
         <div class="cards">
-          <article class="card"><h3>Creation de site vitrine</h3><p>Conception et integration de sites elegants, responsives et SEO friendly.</p></article>
-          <article class="card"><h3>Refonte et optimisation</h3><p>Amelioration des performances, UX et conversion sur des sites existants.</p></article>
-          <article class="card"><h3>Maintenance evolutive</h3><p>Suivi technique, ajouts de sections et evolutions continues.</p></article>
+          <article class="card"><h3>Salesforce Full Stack</h3><p>Developpement Apex, LWC, Visualforce, SOQL/SOSL, securite, data management et automation.</p></article>
+          <article class="card"><h3>Integrations API & MuleSoft</h3><p>Conception et implementation d'integrations REST/SOAP et endpoints custom pour SI enterprise.</p></article>
+          <article class="card"><h3>Architecture & Delivery</h3><p>Cadrage technique, quality standards, mentoring et pilotage de roadmap sur projets critiques.</p></article>
+          <article class="card"><h3>Sites de mariage et invitations</h3><p>Creation de sites d'invitation de mariage elegants, personnalises et optimises pour mobile.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2>Experiences recentes</h2>
+        <p class="section-lead">Parcours issu des informations publiques de ton profil LinkedIn.</p>
+        <div class="timeline">
+          <article class="timeline-item">
+            <h3>Senior Salesforce Full Stack Developer - Bank Leumi</h3>
+            <p>Dec 2025 - Aujourd'hui | Tel Aviv. Developpement et delivery Salesforce sur environnement bancaire enterprise.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Salesforce Full Stack Developer - VO2 GROUP</h3>
+            <p>Mar 2022 - Dec 2025. Expertise Apex, LWC, Visualforce, integrations API, securite et data.</p>
+          </article>
+          <article class="timeline-item">
+            <h3>Salesforce R&D Team Leader - VO2 GROUP</h3>
+            <p>Jan 2024 - Dec 2025. Leadership technique, accompagnement equipe et suivi delivery.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <div class="container">
+        <h2>Certifications</h2>
+        <p class="section-lead">Toutes les certifications publiques de ton LinkedIn, affichees en mode trophees (defilement automatique).</p>
+        <div class="trophy-scroller" aria-label="Defilement des certifications">
+          <div class="trophy-track" id="trophyTrack">
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Identity and Access Management Architect</div>
+              <p>Salesforce • Mar 2025</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Development Lifecycle and Deployment Architect</div>
+              <p>Salesforce • Sep 2024</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Salesforce AI Associate</div>
+              <p>Salesforce • Sep 2024</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>MuleSoft Certified Developer 1</div>
+              <p>Salesforce • Aug 2024</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Flosum DevOps Professional Level Certified</div>
+              <p>Flosum • Jul 2024</p>
+              <a href="https://flosum.com/certification?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Salesforce Integration Architect</div>
+              <p>Salesforce • Jun 2024</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>GitHub Foundations</div>
+              <p>GitHub • Nov 2024</p>
+              <a href="https://credly.com/go/WeUsnj6L?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Salesforce Certified Platform Developer I</div>
+              <p>Salesforce • May 2023</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>Salesforce Certified Associate</div>
+              <p>Salesforce • Apr 2023</p>
+              <a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+            <article class="trophy-card">
+              <div class="trophy-head"><span class="trophy-icon">🏆</span>MCSA: Windows Server 2016</div>
+              <p>Microsoft • Mar 2019</p>
+              <a href="https://credly.com/badges/0c4bc766-f06d-43e0-89d9-9aeaec5e159d?source=linked_in_profile&trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="works" class="section">
+      <div class="container">
+        <h2>Oeuvres deja realisees</h2>
+        <p class="section-lead">Quelques projets en ligne representatifs de mon travail web.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Rubens Pizza</h3>
+            <p>Site vitrine restaurant avec presentation de marque et navigation simple.</p>
+            <p><a href="https://www.rubens-pizza.com" target="_blank" rel="noopener noreferrer">www.rubens-pizza.com</a></p>
+          </article>
+          <article class="card">
+            <h3>Elsa & Ruben</h3>
+            <p>Site d'invitation de mariage avec design emotionnel et experience mobile.</p>
+            <p><a href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">www.elsa-ruben.com</a></p>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="showcase" class="section">
       <div class="container">
-        <h2>Choix des designs de site vitrine</h2>
-        <p class="section-lead">Selection dynamique des maquettes disponibles dans les dossiers du projet.</p>
-        <div class="hero-actions">
-          <button class="btn btn-primary" id="refreshBtn" type="button">Rafraichir les designs</button>
-          <button class="btn btn-outline" id="openFirstBtn" type="button">Ouvrir le premier design</button>
+        <h2>Solutions digitales : Web, Mobile et Salesforce</h2>
+        <p class="section-lead">Je conçois des experiences digitales completes : sites web, applications Flutter pour iOS/Android et services Salesforce sur mesure.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Sites web professionnels</h3>
+            <p>Sites vitrines, plateformes metier et experiences web optimisees performance, SEO et conversion.</p>
+          </article>
+          <article class="card">
+            <h3>Applications Flutter iOS/Android</h3>
+            <p>Applications mobiles robustes pour clients B2B/B2C, avec UX moderne, synchronisation API et maintenance evolutive.</p>
+          </article>
+          <article class="card">
+            <h3>Services Salesforce</h3>
+            <p>Architecture, developpement, integrations et accompagnement delivery pour des environnements Salesforce complexes.</p>
+          </article>
+        </div>
+        <div class="hero-actions" style="margin-top:24px;">
+          <button class="btn btn-primary" id="refreshBtn" type="button">Explorer les maquettes web</button>
+          <button class="btn btn-outline" id="openFirstBtn" type="button">Ouvrir une demo rapidement</button>
         </div>
         <p class="choice-meta" id="status">Detection en cours...</p>
         <div id="list" class="choice-grid" aria-live="polite"></div>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container">
-        <h2>Contact</h2>
-        <p class="section-lead">Disponible pour une mission freelance, une refonte ou la creation de ton prochain site vitrine.</p>
-        <div class="contact-list">
-          <div class="contact-item">
-            <strong>WhatsApp / Telephone:</strong>
-            <a href="tel:+972584191197">+972584191197</a>
-            -
-            <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer">Ecrire sur WhatsApp</a>
-          </div>
-          <div class="contact-item">
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/jeremie-nabet/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jeremie-nabet</a>
-          </div>
-          <div class="contact-item">
-            <strong>Instagram:</strong>
-            <a href="https://www.instagram.com/JeremieNabet/" target="_blank" rel="noopener noreferrer">@JeremieNabet</a>
-          </div>
-          <div class="contact-item">
-            <strong>Facebook:</strong>
-            <a href="https://www.facebook.com/JeremieNabet" target="_blank" rel="noopener noreferrer">JeremieNabet</a>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-row">
       <span>© <span id="year"></span> Jeremie Nabet</span>
-      <a href="#home">Retour en haut</a>
+      <div class="social-links">
+        <a href="tel:+972584191197" aria-label="Telephone" title="Telephone">☎</a>
+        <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">✆</a>
+        <a href="https://www.linkedin.com/in/jeremie-nabet/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="https://www.instagram.com/JeremieNabet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">◉</a>
+        <a href="https://www.facebook.com/JeremieNabet" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook">f</a>
+      </div>
     </div>
   </footer>
 
@@ -444,8 +623,8 @@
       folders.sort((a, b) => a.localeCompare(b, "fr", { numeric: true }));
       renderCards(folders);
       statusEl.textContent = folders.length
-        ? folders.length + " design(s) detecte(s)."
-        : "Aucun design detecte automatiquement.";
+        ? folders.length + " maquette(s) web detectee(s)."
+        : "Aucune maquette web detectee automatiquement.";
       openFirstBtn.disabled = folders.length === 0;
       openFirstBtn.onclick = function () {
         if (folders[0]) window.location.href = "/" + folders[0];
@@ -453,6 +632,10 @@
     }
 
     refreshBtn.addEventListener("click", scanDesignFolders);
+    const trophyTrack = document.getElementById("trophyTrack");
+    if (trophyTrack) {
+      trophyTrack.innerHTML += trophyTrack.innerHTML;
+    }
     document.getElementById("year").textContent = new Date().getFullYear();
     scanDesignFolders();
   </script>
