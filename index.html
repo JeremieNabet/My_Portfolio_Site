@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeremie Nabet | Senior Salesforce Full Stack Developer</title>
-  <meta name="description" content="Portfolio de Jeremie Nabet, Senior Salesforce Full Stack Developer (8x certifie), MuleSoft Developer et expert web/mobile.">
+  <title>Jérémie Nabet | Senior Salesforce Full Stack Developer</title>
+  <meta name="description" content="Portfolio de Jérémie Nabet, Senior Salesforce Full Stack Developer (8x certifié), MuleSoft Developer et expert web/mobile.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -283,10 +283,11 @@
       gap: 9px;
     }
     .choice-card h3 { margin: 0; font-size: 1rem; }
-    .path {
+    .choice-card p {
+      margin: 0;
       color: var(--muted);
-      font-size: 0.84rem;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.88rem;
+      line-height: 1.45;
     }
     .badge {
       width: fit-content;
@@ -296,6 +297,22 @@
       padding: 4px 10px;
       font-size: 0.78rem;
       background: rgba(200, 155, 60, 0.14);
+    }
+    .choice-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+    .style-tag {
+      font-size: 0.78rem;
+      color: #7f6643;
+      background: rgba(200, 155, 60, 0.12);
+      border: 1px solid #e0c99f;
+      border-radius: 999px;
+      padding: 4px 10px;
     }
     .choice-card a {
       width: fit-content;
@@ -351,13 +368,13 @@
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home"><span class="brand-dot"></span>Jeremie Nabet</a>
+      <a class="brand" href="#home"><span class="brand-dot"></span>Jérémie Nabet</a>
       <nav class="nav-links">
-        <a href="#about">A propos</a>
+        <a href="#about">À propos</a>
         <a href="#services">Services</a>
-        <a href="#experience">Experience</a>
+        <a href="#experience">Expérience</a>
         <a href="#certifications">Certifications</a>
-        <a href="#works">Oeuvres</a>
+        <a href="#works">Œuvres</a>
         <a href="#showcase">Solutions</a>
       </nav>
     </div>
@@ -368,8 +385,8 @@
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Portfolio</p>
-          <h1>Jeremie Nabet, Senior Salesforce Full Stack Developer et MuleSoft Developer.</h1>
-          <p class="lead">Basé en Israel, j'interviens sur des ecosystèmes Salesforce complexes (Apex, LWC, integrations API) avec une approche orientee qualite, performance et impact metier.</p>
+          <h1>Jérémie Nabet, Senior Salesforce Full Stack Developer et MuleSoft Developer.</h1>
+          <p class="lead">Basé en Israël, j'interviens sur des écosystèmes Salesforce complexes (Apex, LWC, intégrations API) avec une approche orientée qualité, performance et impact métier.</p>
           <div class="hero-actions">
             <a href="#showcase" class="btn btn-primary">Choisir un design</a>
             <a href="https://www.linkedin.com/in/jeremie-nabet/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Parler de votre projet</a>
@@ -378,8 +395,8 @@
         <aside class="hero-card">
           <h2>En bref</h2>
           <div class="kpis">
-            <div><strong>8x</strong><span>Salesforce certifie</span></div>
-            <div><strong>6+ ans</strong><span>experience totale</span></div>
+            <div><strong>8x</strong><span>Salesforce certifié</span></div>
+            <div><strong>6+ ans</strong><span>expérience totale</span></div>
             <div><strong>500+</strong><span>connexions LinkedIn</span></div>
           </div>
         </aside>
@@ -388,20 +405,41 @@
 
     <section id="about" class="section">
       <div class="container">
-        <h2>A propos</h2>
-        <p class="section-lead">Passionne de technologie, je suis specialise Salesforce depuis plus de 4 ans avec une experience en delivery enterprise, leadership technique et integrations avancees.</p>
+        <h2>À propos</h2>
+        <p class="section-lead">Passionné de technologie, je suis spécialisé Salesforce depuis plus de 4 ans avec une expérience en delivery enterprise, leadership technique et intégrations avancées.</p>
       </div>
     </section>
 
     <section id="services" class="section">
       <div class="container">
         <h2>Services</h2>
-        <p class="section-lead">Accompagnement complet ou mission ciblee selon ton besoin metier et technique.</p>
+        <p class="section-lead">Accompagnement complet ou mission ciblée selon ton besoin métier et technique.</p>
         <div class="cards">
-          <article class="card"><h3>Salesforce Full Stack</h3><p>Developpement Apex, LWC, Visualforce, SOQL/SOSL, securite, data management et automation.</p></article>
-          <article class="card"><h3>Integrations API & MuleSoft</h3><p>Conception et implementation d'integrations REST/SOAP et endpoints custom pour SI enterprise.</p></article>
+          <article class="card"><h3>Salesforce Full Stack</h3><p>Développement Apex, LWC, Visualforce, SOQL/SOSL, sécurité, data management et automation.</p></article>
+          <article class="card"><h3>Intégrations API & MuleSoft</h3><p>Conception et implémentation d'intégrations REST/SOAP et endpoints custom pour SI enterprise.</p></article>
           <article class="card"><h3>Architecture & Delivery</h3><p>Cadrage technique, quality standards, mentoring et pilotage de roadmap sur projets critiques.</p></article>
           <article class="card"><h3>Sites de mariage et invitations</h3><p>Creation de sites d'invitation de mariage elegants, personnalises et optimises pour mobile.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="mobile-apps" class="section">
+      <div class="container">
+        <h2>Applications mobiles métier</h2>
+        <p class="section-lead">Conception et développement d'applications Flutter iOS/Android pour digitaliser les opérations terrain et commerciales.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Application CRM</h3>
+            <p>Gestion des prospects, suivi commercial, tâches et relances en mobilité.</p>
+          </article>
+          <article class="card">
+            <h3>Gestion de stocks</h3>
+            <p>Entrées/sorties, inventaires, alertes de seuil et synchronisation multi-utilisateurs.</p>
+          </article>
+          <article class="card">
+            <h3>Applications sur mesure</h3>
+            <p>Solutions adaptées à votre activité : reporting, workflow interne, SAV et logistique.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -413,15 +451,15 @@
         <div class="timeline">
           <article class="timeline-item">
             <h3>Senior Salesforce Full Stack Developer - Bank Leumi</h3>
-            <p>Dec 2025 - Aujourd'hui | Tel Aviv. Developpement et delivery Salesforce sur environnement bancaire enterprise.</p>
+            <p>Déc. 2025 - Aujourd'hui | Tel Aviv. Développement et delivery Salesforce sur environnement bancaire enterprise.</p>
           </article>
           <article class="timeline-item">
             <h3>Salesforce Full Stack Developer - VO2 GROUP</h3>
-            <p>Mar 2022 - Dec 2025. Expertise Apex, LWC, Visualforce, integrations API, securite et data.</p>
+            <p>Mars 2022 - Déc. 2025. Expertise Apex, LWC, Visualforce, intégrations API, sécurité et data.</p>
           </article>
           <article class="timeline-item">
             <h3>Salesforce R&D Team Leader - VO2 GROUP</h3>
-            <p>Jan 2024 - Dec 2025. Leadership technique, accompagnement equipe et suivi delivery.</p>
+            <p>Janv. 2024 - Déc. 2025. Leadership technique, accompagnement équipe et suivi delivery.</p>
           </article>
         </div>
       </div>
@@ -430,8 +468,7 @@
     <section id="certifications" class="section">
       <div class="container">
         <h2>Certifications</h2>
-        <p class="section-lead">Toutes les certifications publiques de ton LinkedIn, affichees en mode trophees (defilement automatique).</p>
-        <div class="trophy-scroller" aria-label="Defilement des certifications">
+        <div class="trophy-scroller" aria-label="Défilement des certifications">
           <div class="trophy-track" id="trophyTrack">
             <article class="trophy-card">
               <div class="trophy-head"><span class="trophy-icon">🏆</span>Identity and Access Management Architect</div>
@@ -490,8 +527,8 @@
 
     <section id="works" class="section">
       <div class="container">
-        <h2>Oeuvres deja realisees</h2>
-        <p class="section-lead">Quelques projets en ligne representatifs de mon travail web.</p>
+        <h2>Œuvres déjà réalisées</h2>
+        <p class="section-lead">Quelques projets en ligne représentatifs de mon travail web.</p>
         <div class="cards">
           <article class="card">
             <h3>Rubens Pizza</h3>
@@ -500,7 +537,7 @@
           </article>
           <article class="card">
             <h3>Elsa & Ruben</h3>
-            <p>Site d'invitation de mariage avec design emotionnel et experience mobile.</p>
+            <p>Site d'invitation de mariage avec design émotionnel et expérience mobile.</p>
             <p><a href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">www.elsa-ruben.com</a></p>
           </article>
         </div>
@@ -510,26 +547,26 @@
     <section id="showcase" class="section">
       <div class="container">
         <h2>Solutions digitales : Web, Mobile et Salesforce</h2>
-        <p class="section-lead">Je conçois des experiences digitales completes : sites web, applications Flutter pour iOS/Android et services Salesforce sur mesure.</p>
+        <p class="section-lead">Je conçois des expériences digitales complètes : sites web, applications Flutter pour iOS/Android et services Salesforce sur mesure.</p>
         <div class="cards">
           <article class="card">
             <h3>Sites web professionnels</h3>
-            <p>Sites vitrines, plateformes metier et experiences web optimisees performance, SEO et conversion.</p>
+            <p>Sites vitrines, plateformes métier et expériences web optimisées performance, SEO et conversion.</p>
           </article>
           <article class="card">
             <h3>Applications Flutter iOS/Android</h3>
-            <p>Applications mobiles robustes pour clients B2B/B2C, avec UX moderne, synchronisation API et maintenance evolutive.</p>
+            <p>Applications mobiles robustes pour clients B2B/B2C, avec UX moderne, synchronisation API et maintenance évolutive.</p>
           </article>
           <article class="card">
             <h3>Services Salesforce</h3>
-            <p>Architecture, developpement, integrations et accompagnement delivery pour des environnements Salesforce complexes.</p>
+            <p>Architecture, développement, intégrations et accompagnement delivery pour des environnements Salesforce complexes.</p>
           </article>
         </div>
         <div class="hero-actions" style="margin-top:24px;">
           <button class="btn btn-primary" id="refreshBtn" type="button">Explorer les maquettes web</button>
-          <button class="btn btn-outline" id="openFirstBtn" type="button">Ouvrir une demo rapidement</button>
+          <button class="btn btn-outline" id="openFirstBtn" type="button">Ouvrir une démo rapidement</button>
         </div>
-        <p class="choice-meta" id="status">Detection en cours...</p>
+        <p class="choice-meta" id="status">Détection en cours...</p>
         <div id="list" class="choice-grid" aria-live="polite"></div>
       </div>
     </section>
@@ -538,7 +575,7 @@
 
   <footer class="footer">
     <div class="container footer-row">
-      <span>© <span id="year"></span> Jeremie Nabet</span>
+      <span>© <span id="year"></span> Jérémie Nabet</span>
       <div class="social-links">
         <a href="tel:+972584191197" aria-label="Telephone" title="Telephone">☎</a>
         <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp">✆</a>
@@ -567,19 +604,41 @@
     function renderCards(paths) {
       listEl.innerHTML = "";
       if (!paths.length) {
-        listEl.innerHTML = '<div class="empty">Aucun design detecte. Lance le site via un serveur local puis clique sur "Rafraichir les designs".</div>';
+        listEl.innerHTML = '<div class="empty">Aucune maquette détectée. Lance le site via un serveur local puis clique sur "Explorer les maquettes web".</div>';
         return;
       }
 
+      function getFriendlyDesignData(path, index) {
+        const slug = path.replaceAll("/", "");
+        const numberMatch = slug.match(/(\d+)/);
+        const number = numberMatch ? Number(numberMatch[1]) : index + 1;
+        const presets = {
+          1: { name: "Design Classique", desc: "Présentation claire et structurée, idéale pour une image professionnelle.", tag: "Sobre" },
+          2: { name: "Design Premium", desc: "Style éditorial élégant pour valoriser une offre haut de gamme.", tag: "Élégant" },
+          3: { name: "Design Impact", desc: "Direction visuelle immersive orientée confiance et conversion.", tag: "Moderne" },
+          4: { name: "Design Créatif", desc: "Ambiance dynamique, parfaite pour les marques audacieuses.", tag: "Créatif" },
+          5: { name: "Design Tech Business", desc: "Positionnement orienté solutions digitales, apps métier et services Salesforce.", tag: "Business" }
+        };
+        return presets[number] || {
+          name: "Design " + number,
+          desc: "Template personnalisable selon votre activité et votre identité visuelle.",
+          tag: "Personnalisable"
+        };
+      }
+
       const fragment = document.createDocumentFragment();
-      for (const path of paths) {
+      for (const [index, path] of paths.entries()) {
+        const data = getFriendlyDesignData(path, index);
         const card = document.createElement("article");
         card.className = "choice-card";
         card.innerHTML =
           "<span class=\"badge\">Disponible</span>" +
-          "<h3>" + path.replaceAll("/", "") + "</h3>" +
-          "<div class=\"path\">/" + path + "index.html</div>" +
-          "<a href=\"/" + path + "\">Voir ce design</a>";
+          "<h3>" + data.name + "</h3>" +
+          "<p>" + data.desc + "</p>" +
+          "<div class=\"choice-card-footer\">" +
+          "<span class=\"style-tag\">" + data.tag + "</span>" +
+          "<a href=\"/" + path + "\">Voir ce design</a>" +
+          "</div>";
         fragment.appendChild(card);
       }
       listEl.appendChild(fragment);
@@ -608,7 +667,7 @@
     }
 
     async function scanDesignFolders() {
-      statusEl.textContent = "Detection dynamique des dossiers...";
+      statusEl.textContent = "Détection dynamique des dossiers...";
       const fromRoot = await getFolderCandidatesFromServerRoot();
       let folders = [];
 
@@ -623,8 +682,8 @@
       folders.sort((a, b) => a.localeCompare(b, "fr", { numeric: true }));
       renderCards(folders);
       statusEl.textContent = folders.length
-        ? folders.length + " maquette(s) web detectee(s)."
-        : "Aucune maquette web detectee automatiquement.";
+        ? "Sélectionnez le design qui vous correspond."
+        : "Aucune maquette web détectée automatiquement.";
       openFirstBtn.disabled = folders.length === 0;
       openFirstBtn.onclick = function () {
         if (folders[0]) window.location.href = "/" + folders[0];

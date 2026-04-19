@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helio Pro | Maquette Vitrine 5</title>
+  <meta name="description" content="Maquette vitrine 5 orientée solutions digitales et applications métier.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f1327;
+      --surface: #151b36;
+      --surface-soft: #1d2549;
+      --text: #eef1ff;
+      --muted: #b8c0e5;
+      --primary: #7c8dff;
+      --accent: #65d7d6;
+      --border: #303c70;
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Outfit", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 85% -20%, #20306e, transparent 30%), var(--bg);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid var(--border);
+      background: rgba(15, 19, 39, 0.86);
+      backdrop-filter: blur(8px);
+    }
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0c1430;
+      font-weight: 800;
+    }
+    .main-nav { display: flex; align-items: center; gap: 10px; }
+    .main-nav a:not(.btn) { color: var(--muted); font-weight: 600; }
+
+    .btn {
+      border: 0;
+      border-radius: 11px;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, var(--primary), #9f7eff);
+      color: white;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .btn-light {
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      color: var(--text);
+    }
+
+    .hero { padding: 84px 0 70px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      line-height: 1.1;
+    }
+    .lead {
+      margin: 16px 0 24px;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+    .hero-panel {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(165deg, #1a2245, #141a34);
+      padding: 22px;
+    }
+    .hero-panel ul {
+      margin: 12px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .section { padding: 66px 0; }
+    .section.alt {
+      background: #121834;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+    .section-head p { margin-top: 8px; color: var(--muted); }
+    .cards {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      padding: 18px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 1.02rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .contact-form {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      padding: 18px;
+      display: grid;
+      gap: 11px;
+    }
+    label { display: grid; gap: 6px; font-size: .92rem; color: var(--muted); font-weight: 600; }
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #111730;
+      color: var(--text);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+    }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 24px 0 30px;
+      font-size: .94rem;
+    }
+    .footer-row { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+    @media (max-width: 920px) {
+      .hero-grid, .cards, .contact-wrap { grid-template-columns: 1fr; }
+      .main-nav a:not(.btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand"><span class="brand-mark">H</span>Helio Pro</a>
+      <nav class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#apps">Apps</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" class="btn">Discuter du projet</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Maquette 05</p>
+          <h1>Une maquette vitrine orientée business digital et applications métier.</h1>
+          <p class="lead">Ce design met en avant à la fois les services web et le développement d'applications mobiles pour clients B2B et B2C.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a class="btn" href="#contact">Demander une proposition</a>
+            <a class="btn btn-light" href="#apps">Voir les applications</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <h2>Parfait pour :</h2>
+          <ul>
+            <li>Consultants et freelances tech</li>
+            <li>Studios web & mobile</li>
+            <li>Offres CRM, ERP, stock et ops</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>Une offre claire pour accélérer les projets</h2>
+          <p>Structure pensée pour présenter des prestations techniques avec clarté.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><h3>Développement Web</h3><p>Création de sites et plateformes performantes, maintenables et orientées conversion.</p></article>
+          <article class="card"><h3>Applications Mobiles</h3><p>Apps Flutter iOS/Android connectées à vos APIs et outils métier.</p></article>
+          <article class="card"><h3>Services Salesforce</h3><p>Architecture, intégrations, optimisation process et support delivery.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="apps" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Applications Mobiles</p>
+          <h2>Des apps conçues pour les usages métiers</h2>
+          <p>Exemples de cas d'usage adaptés aux PME, retail, terrain et équipes opérationnelles.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><h3>CRM Mobile</h3><p>Suivi des prospects, rendez-vous et interactions clients en mobilité.</p></article>
+          <article class="card"><h3>Gestion de stock</h3><p>Entrées/sorties produits, alertes de seuil, inventaires et synchronisation en temps réel.</p></article>
+          <article class="card"><h3>Pilotage d'activité</h3><p>Tableaux de bord, notifications terrain et validation des workflows métiers.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Avis</p>
+          <h2>Retours clients</h2>
+        </div>
+        <div class="cards">
+          <blockquote class="card">"Une présentation claire de nos services, nos prospects comprennent notre valeur en quelques minutes."</blockquote>
+          <blockquote class="card">"Le template a accéléré notre mise en ligne tout en gardant une image premium."</blockquote>
+          <blockquote class="card">"Très bon équilibre entre design, lisibilité et discours technique."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Prêt à lancer ton prochain projet ?</h2>
+          <p>Bloc formulaire prêt à connecter à un backend, une API ou un outil no-code.</p>
+        </div>
+        <form class="contact-form">
+          <label>Nom<input type="text" required></label>
+          <label>Email<input type="email" required></label>
+          <label>Message<textarea rows="4" required></textarea></label>
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Helio Pro</span>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/">Retour au portfolio</a>
+        <a href="#home">Retour en haut</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
