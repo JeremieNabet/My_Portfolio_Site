@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nom de Marque | Site Vitrine</title>
+  <meta name="description" content="Template générique de site vitrine moderne, rapide et réutilisable.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Accueil">
+        <span class="brand-mark">N</span>
+        <span>Nom de Marque</span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#about">A propos</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" class="btn btn-sm">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Template Reutilisable</p>
+          <h1>Une maquette vitrine claire et premium pour tous tes futurs projets.</h1>
+          <p class="lead">
+            Structure rapide a personnaliser: hero, services, preuve sociale, contact et footer.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#contact">Demander un devis</a>
+            <a class="btn btn-ghost" href="#services">Voir les sections</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Bloc visuel remplaçable</h2>
+          <p>
+            Remplace ce bloc par une image, une video ou un carousel selon ton client.
+          </p>
+          <ul>
+            <li>Design responsive</li>
+            <li>Palette centralisee</li>
+            <li>Sans framework</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>3 offres simples a presenter</h2>
+        </div>
+        <div class="cards-3">
+          <article class="card">
+            <h3>Offre Start</h3>
+            <p>Parfaite pour un besoin simple et rapide a lancer.</p>
+            <a href="#contact">En savoir plus</a>
+          </article>
+          <article class="card featured">
+            <h3>Offre Pro</h3>
+            <p>La formule la plus choisie pour un rendu complet.</p>
+            <a href="#contact">En savoir plus</a>
+          </article>
+          <article class="card">
+            <h3>Offre Premium</h3>
+            <p>Experience complete pour un projet a forte valeur.</p>
+            <a href="#contact">En savoir plus</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section alt">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">A propos</p>
+          <h2>Une section narrative qui rassure les visiteurs.</h2>
+          <p>
+            Utilise cet espace pour expliquer ta methode, tes engagements et ta difference.
+            Tu peux aussi inserer des chiffres cles ou des labels qualite.
+          </p>
+        </div>
+        <div class="stats">
+          <div><strong>+120</strong><span>projets livres</span></div>
+          <div><strong>4.9/5</strong><span>satisfaction client</span></div>
+          <div><strong>24h</strong><span>delai de reponse</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Avis Clients</p>
+          <h2>Preuve sociale prête a l'emploi</h2>
+        </div>
+        <div class="cards-3">
+          <blockquote class="card">
+            <p>"Site propre, clair et conversion en hausse des la premiere semaine."</p>
+            <cite>- Client A</cite>
+          </blockquote>
+          <blockquote class="card">
+            <p>"Le template est devenu notre base pour tous nos nouveaux projets."</p>
+            <cite>- Client B</cite>
+          </blockquote>
+          <blockquote class="card">
+            <p>"Rapide a adapter, facile a maintenir, tres bon rendu mobile."</p>
+            <cite>- Client C</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Formulaire de prise de contact</h2>
+          <p>Branche ce formulaire sur ton endpoint, Formspree ou une API serverless.</p>
+        </div>
+        <form class="contact-form" novalidate>
+          <label>
+            Nom
+            <input type="text" name="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button type="submit" class="btn">Envoyer</button>
+          <p class="form-feedback" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© <span id="year"></span> Nom de Marque. Tous droits reserves.</p>
+      <div class="footer-links">
+        <a href="#home">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

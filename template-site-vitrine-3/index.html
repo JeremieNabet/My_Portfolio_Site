@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nova Green | Maquette Vitrine 3</title>
+  <meta name="description" content="Maquette vitrine moderne orientee eco-responsabilite et impact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #071a14;
+      --surface: #0d261f;
+      --surface-soft: #123228;
+      --text: #ecfff6;
+      --muted: #b2d8c8;
+      --primary: #52d19c;
+      --primary-strong: #30a978;
+      --border: #1f4a3b;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #081f18, #06140f 35%);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+
+    .site-header {
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 26, 20, 0.78);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 30;
+    }
+    .nav-wrap {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand { font-weight: 800; letter-spacing: 0.01em; }
+    .brand::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-right: 8px;
+      box-shadow: 0 0 0 7px rgba(82, 209, 156, 0.15);
+      vertical-align: middle;
+    }
+    .main-nav { display: flex; gap: 12px; align-items: center; }
+    .main-nav a:not(.btn) { color: var(--muted); font-weight: 600; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      background: var(--primary);
+      color: #062218;
+      font-weight: 800;
+    }
+    .btn-outline {
+      background: transparent;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 88px 0 70px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 26px;
+      align-items: center;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0;
+      line-height: 1.08;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      max-width: 16ch;
+    }
+    .lead { color: var(--muted); margin: 18px 0 24px; max-width: 60ch; }
+    .hero-panel {
+      background: linear-gradient(155deg, #133127, #0e241d 55%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+    .hero-panel h2 { margin: 0 0 8px; font-size: 1.3rem; }
+    .hero-panel ul { margin: 14px 0 0; padding-left: 17px; color: var(--muted); }
+
+    .section { padding: 68px 0; }
+    .section.alt { background: #071a14; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .section-head h2 { margin: 0; font-size: clamp(1.5rem, 3.2vw, 2.2rem); }
+    .section-head p { color: var(--muted); margin-top: 8px; }
+    .cards {
+      margin-top: 24px;
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .card {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+    .card.featured { background: var(--surface-soft); border-color: #2f7c60; }
+
+    .split {
+      display: grid;
+      gap: 20px;
+      align-items: start;
+      grid-template-columns: 1fr 1fr;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .stats div {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .stats strong { display: block; font-size: 1.6rem; }
+
+    .contact-wrap {
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+    }
+    .contact-form {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: grid;
+      gap: 12px;
+    }
+    label { display: grid; gap: 6px; font-size: 0.92rem; font-weight: 600; color: var(--muted); }
+    input, textarea {
+      font: inherit;
+      border: 1px solid var(--border);
+      background: #0a1d18;
+      border-radius: 10px;
+      padding: 11px 12px;
+      color: var(--text);
+    }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 28px 0;
+      font-size: 0.94rem;
+    }
+    .footer-row { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+
+    @media (max-width: 920px) {
+      .hero-grid, .cards, .split, .contact-wrap, .stats { grid-template-columns: 1fr; }
+      .main-nav a:not(.btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand">Nova Green</a>
+      <nav class="main-nav">
+        <a href="#services">Solutions</a>
+        <a href="#about">Impact</a>
+        <a href="#reviews">Temoignages</a>
+        <a href="#contact" class="btn">Audit gratuit</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Maquette 03</p>
+          <h1>Une vitrine eco-tech pour afficher ton impact et convertir.</h1>
+          <p class="lead">Variation de la maquette d'origine avec une direction visuelle plus immersive: ambiance sombre, accent vert et sections orientees confiance.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#contact" class="btn">Lancer mon projet</a>
+            <a href="#services" class="btn btn-outline">Explorer les blocs</a>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <h2>Ce que contient la base</h2>
+          <ul>
+            <li>Navigation claire et sticky</li>
+            <li>Sections services, preuve et contact</li>
+            <li>Design mobile-first adaptable</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Solutions</p>
+          <h2>Un parcours simple pour guider ton prospect</h2>
+          <p>Tu peux garder ces trois etapes ou les remplacer par tes offres commerciales.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><h3>Audit durable</h3><p>Evaluation UX, contenu et performance de ton site actuel.</p></article>
+          <article class="card featured"><h3>Refonte responsable</h3><p>Creation d'une vitrine plus rapide, plus claire et plus sobre.</p></article>
+          <article class="card"><h3>Suivi trimestriel</h3><p>Optimisation continue avec reporting d'impact et conversion.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Impact</p>
+          <h2>Un discours clair, des preuves concretes.</h2>
+          <p>Comme la maquette 1, ce bloc sert a raconter ta methode. Ici, il est renforce par des indicateurs visibles pour rassurer le visiteur.</p>
+        </div>
+        <div class="stats">
+          <div><strong>-38%</strong><span>poids moyen des pages</span></div>
+          <div><strong>+31%</strong><span>leads qualifies</span></div>
+          <div><strong>98%</strong><span>clients satisfaits</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Temoignages</p>
+          <h2>Ce que disent les clients</h2>
+        </div>
+        <div class="cards">
+          <blockquote class="card">"Le nouveau site est bien plus rapide et l'image de marque est montee d'un cran."</blockquote>
+          <blockquote class="card">"Nous avons enfin une page d'accueil qui explique clairement notre valeur."</blockquote>
+          <blockquote class="card">"Le template est propre, fiable et facile a maintenir dans le temps."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Recevoir une proposition en 48h</h2>
+          <p>Ce formulaire reprend la logique de la maquette d'origine et reste simple a connecter.</p>
+        </div>
+        <form class="contact-form">
+          <label>Nom<input type="text" required></label>
+          <label>Email<input type="email" required></label>
+          <label>Message<textarea rows="4" required></textarea></label>
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Nova Green</span>
+      <a href="#home">Haut de page</a>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
