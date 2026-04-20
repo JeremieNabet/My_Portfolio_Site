@@ -1,0 +1,8 @@
+{
+  "name": "template-site-vitrine",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "nodemailer": "^8.0.5"
+  }
+}
