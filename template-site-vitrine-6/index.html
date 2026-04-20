@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horizon Immo | Maquette Vitrine 6</title>
+  <meta name="description" content="Template site vitrine pour agent immobilier : biens, services, avis et contact.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f2f5fb;
+      --surface: #ffffff;
+      --text: #1a253b;
+      --muted: #657089;
+      --primary: #1f5eff;
+      --secondary: #0c2d8f;
+      --border: #d9e2f4;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--text);
+      background: radial-gradient(circle at 92% -10%, #dfe8ff, transparent 30%), var(--bg);
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(242, 245, 251, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand {
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      font-size: .9rem;
+    }
+    .main-nav { display: flex; align-items: center; gap: 12px; }
+    .main-nav a:not(.btn) { color: var(--muted); font-weight: 600; }
+
+    .btn {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .btn-light {
+      background: white;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .hero { padding: 84px 0 68px; }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: center;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    h1 {
+      margin: 0;
+      line-height: 1.1;
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+    }
+    .lead { margin: 16px 0 24px; color: var(--muted); max-width: 62ch; }
+    .hero-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      padding: 22px;
+      box-shadow: 0 12px 28px rgba(25, 47, 105, 0.1);
+    }
+    .hero-card ul {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .section { padding: 66px 0; }
+    .section.alt {
+      background: #eef3fb;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+    .section-head p { margin-top: 8px; color: var(--muted); }
+    .cards {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      padding: 18px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 1.03rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+    .price {
+      margin-top: 10px;
+      display: inline-flex;
+      border-radius: 999px;
+      padding: 4px 10px;
+      background: rgba(31, 94, 255, 0.1);
+      color: #1847bc;
+      font-weight: 700;
+      font-size: .84rem;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+    .contact-form {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: var(--surface);
+      padding: 18px;
+      display: grid;
+      gap: 11px;
+    }
+    label { display: grid; gap: 6px; font-size: .9rem; font-weight: 600; color: var(--muted); }
+    input, textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font: inherit;
+    }
+    .site-footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      padding: 24px 0 30px;
+      font-size: .94rem;
+    }
+    .footer-row { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+
+    @media (max-width: 920px) {
+      .hero-grid, .cards, .contact-wrap { grid-template-columns: 1fr; }
+      .main-nav a:not(.btn) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand"><span class="brand-mark">HI</span>Horizon Immo</a>
+      <nav class="main-nav">
+        <a href="#biens">Biens</a>
+        <a href="#services">Services</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" class="btn">Estimation gratuite</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Maquette 06</p>
+          <h1>Votre agent immobilier de confiance pour acheter, vendre ou louer rapidement.</h1>
+          <p class="lead">Template vitrine pensé pour les agents immobiliers : mise en avant des biens, preuves de confiance et formulaire de contact direct.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#biens" class="btn">Voir les biens</a>
+            <a href="#contact" class="btn btn-light">Demander un rendez-vous</a>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <h2>Pourquoi ce design fonctionne</h2>
+          <ul>
+            <li>Parcours clair orienté conversion</li>
+            <li>Biens immobiliers faciles à comparer</li>
+            <li>Bloc contact prêt à connecter</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="biens" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Biens à la une</p>
+          <h2>Une présentation premium de vos meilleures opportunités</h2>
+          <p>Remplacez ces cartes par vos annonces réelles : photos, surfaces, quartier et prix.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <h3>Appartement 4 pièces - Jérusalem</h3>
+            <p>95m², balcon, parking, proche écoles et transports.</p>
+            <span class="price">2 150 000 ₪</span>
+          </article>
+          <article class="card">
+            <h3>Penthouse - Tel Aviv</h3>
+            <p>Vue mer, terrasse 40m², finitions haut de gamme.</p>
+            <span class="price">5 800 000 ₪</span>
+          </article>
+          <article class="card">
+            <h3>Maison familiale - Modiin</h3>
+            <p>6 pièces, jardin, quartier résidentiel recherché.</p>
+            <span class="price">3 450 000 ₪</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Services</p>
+          <h2>Un accompagnement complet à chaque étape</h2>
+        </div>
+        <div class="cards">
+          <article class="card"><h3>Estimation immobilière</h3><p>Analyse précise du marché pour positionner votre bien au meilleur prix.</p></article>
+          <article class="card"><h3>Commercialisation</h3><p>Photos pro, diffusion ciblée et qualification des acheteurs sérieux.</p></article>
+          <article class="card"><h3>Négociation et suivi</h3><p>Accompagnement jusqu'à la signature avec un suivi transparent.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Avis clients</p>
+          <h2>La confiance de nos vendeurs et acquéreurs</h2>
+        </div>
+        <div class="cards">
+          <blockquote class="card">"Vente rapide et accompagnement excellent du début à la fin."</blockquote>
+          <blockquote class="card">"Très bonne connaissance du marché local, je recommande."</blockquote>
+          <blockquote class="card">"Communication claire, dossiers bien suivis, expérience fluide."</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container contact-wrap">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Parlons de votre projet immobilier</h2>
+          <p>Ce formulaire peut être connecté à votre CRM, e-mail ou API pour gérer les leads automatiquement.</p>
+        </div>
+        <form class="contact-form">
+          <label>Nom<input type="text" required></label>
+          <label>Téléphone<input type="tel" required></label>
+          <label>Projet<textarea rows="4" required></textarea></label>
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Horizon Immo</span>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="/">Retour au portfolio</a>
+        <a href="#home">Retour en haut</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
