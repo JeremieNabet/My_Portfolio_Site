@@ -264,11 +264,26 @@ h1 {
   height: 28px;
   border-radius: 50%;
   border: 1px solid #d8b474;
-  background: rgba(200, 155, 60, 0.18);
+  background: #fff8ec;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.95rem;
+  overflow: hidden;
+  flex: 0 0 28px;
+  line-height: 0;
+}
+.trophy-icon img {
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  object-fit: contain;
+  object-position: center;
+  flex-shrink: 0;
+}
+.trophy-icon i {
+  font-size: 0.8rem;
+  color: #7a5a22;
+  line-height: 1;
 }
 .trophy-card p {
   margin: 0;
