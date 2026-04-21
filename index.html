@@ -176,7 +176,15 @@
 
   <footer class="footer">
     <div class="container footer-row">
-      <span>© <span id="year"></span> Jérémie Nabet</span>
+      <nav class="footer-nav" aria-label="Navigation pied de page">
+        <a href="#about">À propos</a>
+        <a href="#services">Services</a>
+        <a href="#experience">Expérience</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#works">Œuvres</a>
+        <a href="#showcase">Solutions</a>
+        <a href="#contact">Contact</a>
+      </nav>
       <div class="social-links">
         <a href="tel:+972584191197" aria-label="Téléphone" title="Téléphone"><i class="fa-solid fa-phone"></i></a>
         <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
@@ -185,6 +193,7 @@
         <a href="https://www.instagram.com/JeremieNabet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
         <a href="https://www.facebook.com/JeremieNabet" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
       </div>
+      <span class="footer-copy">© 2026 Jérémie Nabet</span>
     </div>
   </footer>
 
@@ -328,7 +337,6 @@
     if (trophyTrack) {
       trophyTrack.innerHTML += trophyTrack.innerHTML;
     }
-    document.getElementById("year").textContent = new Date().getFullYear();
     scanDesignFolders();
   </script>
 </body>
