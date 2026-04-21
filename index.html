@@ -1,174 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jérémie Nabet | Senior Salesforce Full Stack Developer</title>
-  <meta name="description" content="Portfolio de Jérémie Nabet, Senior Salesforce Full Stack Developer (8x certifié), MuleSoft Developer et expert web/mobile.">
+  <title>Jérémie Nabet | Designer & Coder</title>
+  <meta name="description" content="Portfolio de Jérémie Nabet, Senior Salesforce Full Stack Developer et créateur d'expériences web et mobiles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body id="top">
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top">
-        <img class="brand-logo" src="./assets/images/logo-jn-transparent.png" alt="Logo Jérémie Nabet">
-        <span>Jérémie Nabet</span>
+    <div class="container header-row">
+      <a class="logo" href="#top" aria-label="Retour en haut de page">
+        <span class="logo-badge" aria-hidden="true">JN</span>
+        <span class="logo-name" aria-hidden="true" data-first-name="Jeremie Nabet"></span>
       </a>
-      <nav class="nav-links">
-        <a href="#about">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#experience">Expérience</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#works">Œuvres</a>
-        <a href="#showcase">Solutions</a>
-        <a href="#contact">Contact</a>
-        <a href="./index-en.html" class="lang-link">EN</a>
-        <a href="./index-he.html" class="lang-link">HE</a>
-        <a href="#contact" class="btn btn-primary nav-contact-btn">Me contacter</a>
+      <button class="menu-toggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="mainNav">
+        <span class="nav-label" aria-hidden="true">Pages</span>
+        <a href="./about.html">about</a>
+        <a href="#work">portfolio</a>
+        <a href="#contact">contact</a>
+        <span class="nav-label nav-label-languages" aria-hidden="true">Langues</span>
+        <a class="lang-link" href="./index-en.html">en</a>
+        <a class="lang-link" href="./index-he.html">he</a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <section class="entry-illustration" aria-label="Illustration de présentation">
-      <img src="./assets/images/Jeremie_Logo_no_bg.png" alt="Illustration de présentation du site">
-    </section>
-
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Portfolio</p>
-          <h1>Senior Salesforce Full Stack Developer et MuleSoft Developer.</h1>
-          <p class="lead">Basé en Israël, j'interviens sur des écosystèmes Salesforce complexes (Apex, LWC, intégrations API) avec une approche orientée qualité, performance et impact métier.</p>
-          <div class="hero-actions">
-            <a href="#showcase" class="btn btn-primary">Choisir un design</a>
-            <a href="#contact" class="btn btn-outline">Parler de votre projet</a>
-          </div>
-        </div>
-        <aside class="hero-card">
-          <h2>En bref</h2>
-          <div class="kpis">
-            <div><strong>8x</strong><span>Salesforce certifié</span></div>
-            <div><strong>6+ ans</strong><span>expérience totale</span></div>
-            <div><strong>500+</strong><span>connexions LinkedIn</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section id="about" class="section">
+  <main>
+    <section class="hero scroll-section" data-scroll-section>
       <div class="container">
-        <h2>À propos</h2>
-        <p class="section-lead">Passionné de technologie, je suis spécialisé Salesforce depuis plus de 4 ans avec une expérience en delivery enterprise, leadership technique et intégrations avancées.</p>
-      </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <h2>Services</h2>
-        <p class="section-lead">Accompagnement complet ou mission ciblée selon ton besoin métier et technique.</p>
-        <div class="cards">
-          <article class="card"><h3>Salesforce Full Stack</h3><p>Développement Apex, LWC, Visualforce, SOQL/SOSL, sécurité, data management et automation.</p></article>
-          <article class="card"><h3>Intégrations API & MuleSoft</h3><p>Conception et implémentation d'intégrations REST/SOAP et endpoints custom pour SI enterprise.</p></article>
-          <article class="card"><h3>Architecture & Delivery</h3><p>Cadrage technique, quality standards, mentoring et pilotage de roadmap sur projets critiques.</p></article>
-          <article class="card"><h3>Sites de mariage et invitations</h3><p>Creation de sites d'invitation de mariage elegants, personnalises et optimises pour mobile.</p></article>
+        <div class="split-face" id="splitFace">
+          <a class="panel panel-left" href="#contact">
+            <div class="panel-copy">
+              <h1 class="dynamic-text dynamic-text-left">designer</h1>
+              <p class="dynamic-text dynamic-text-left">Product design, UI systems et expériences orientées usage réel.</p>
+            </div>
+          </a>
+          <a class="panel panel-right" href="./about.html">
+            <div class="panel-copy">
+              <h1 class="dynamic-text dynamic-text-right"><span>&lt;</span>coder<span>&gt;</span></h1>
+              <p class="dynamic-text dynamic-text-right">Développement propre, scalable et performant pour le web et Salesforce.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="mobile-apps" class="section">
+    <section id="work" class="section-dark scroll-section" data-scroll-section>
       <div class="container">
-        <h2>Applications mobiles métier</h2>
-        <p class="section-lead">Conception et développement d'applications Flutter iOS/Android pour digitaliser les opérations terrain et commerciales.</p>
-        <div class="cards">
-          <article class="card"><h3>Application CRM</h3><p>Gestion des prospects, suivi commercial, tâches et relances en mobilité.</p></article>
-          <article class="card"><h3>Gestion de stocks</h3><p>Entrées/sorties, inventaires, alertes de seuil et synchronisation multi-utilisateurs.</p></article>
-          <article class="card"><h3>Applications sur mesure</h3><p>Solutions adaptées à votre activité : reporting, workflow interne, SAV et logistique.</p></article>
+        <div class="section-title">
+          <h2>Some of my latest work</h2>
         </div>
+        <ul class="work-grid">
+          <li class="work-card">
+            <iframe
+              src="https://www.rubens-pizza.com/fr"
+              title="Ruben's Pizza"
+              loading="lazy"
+              scrolling="no"
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+            <div class="work-copy">
+              <h3>Ruben's Pizza</h3>
+              <p>Site vitrine design et integration.</p>
+              <a class="work-link" href="https://www.rubens-pizza.com" target="_blank" rel="noopener noreferrer">Voir le site</a>
+            </div>
+          </li>
+          <li class="work-card">
+            <iframe
+              src="https://www.elsa-ruben.com/fr"
+              title="Elsa & Ruben"
+              loading="lazy"
+              scrolling="no"
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+            <div class="work-copy">
+              <h3>Elsa & Ruben</h3>
+              <p>Site evenementiel premium et responsive.</p>
+              <a class="work-link" href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">Voir le site</a>
+            </div>
+          </li>
+          <li class="work-card">
+            <a href="./bmky-app.html">
+              <img src="./assets/BMKY_app/BMKY_image.jpeg" alt="Application Flutter BMKY Beth Amidrash">
+            </a>
+            <div class="work-copy">
+              <h3>Beth Amidrash App</h3>
+              <p>Application CRM Flutter connectee a Salesforce pour piloter contacts, actions, paiements et suivi.</p>
+              <a class="work-link" href="./bmky-app.html">Voir le projet</a>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <section id="experience" class="section">
-      <div class="container">
-        <h2>Experiences recentes</h2>
-        <p class="section-lead">Parcours issu des informations publiques de ton profil LinkedIn.</p>
-        <div class="timeline">
-          <article class="timeline-item"><h3>Senior Salesforce Full Stack Developer - Bank Leumi</h3><p>Déc. 2025 - Aujourd'hui | Tel Aviv. Développement et delivery Salesforce sur environnement bancaire enterprise.</p></article>
-          <article class="timeline-item"><h3>Salesforce Full Stack Developer - VO2 GROUP</h3><p>Mars 2022 - Déc. 2025. Expertise Apex, LWC, Visualforce, intégrations API, sécurité et data.</p></article>
-          <article class="timeline-item"><h3>Salesforce R&D Team Leader - VO2 GROUP</h3><p>Janv. 2024 - Déc. 2025. Leadership technique, accompagnement équipe et suivi delivery.</p></article>
+    <section id="contact" class="section-contact scroll-section" data-scroll-section>
+      <div class="container split-content">
+        <div class="text-col">
+          <h2>contact.</h2>
+          <p class="intro">Parlons de ton projet Salesforce, web ou mobile.</p>
+          <p>Donne-moi le contexte, tes objectifs et ton timing. Je reviens vers toi rapidement avec une proposition claire et actionnable.</p>
         </div>
-      </div>
-    </section>
-
-    <section id="certifications" class="section">
-      <div class="container">
-        <h2>Certifications</h2>
-        <div class="trophy-scroller" aria-label="Défilement des certifications">
-          <div class="trophy-track" id="trophyTrack">
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/salesforce.svg" alt="Salesforce"></span>Identity and Access Management Architect</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/salesforce.svg" alt="Salesforce"></span>Development Lifecycle and Deployment Architect</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/salesforce.svg" alt="Salesforce"></span>Salesforce AI Associate</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/mulesoft.svg" alt="MuleSoft"></span>MuleSoft Certified Developer 1</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><i class="fa-solid fa-gears" aria-hidden="true"></i></span>Flosum DevOps Professional Level Certified</div><a href="https://flosum.com/certification?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/salesforce.svg" alt="Salesforce"></span>Salesforce Integration Architect</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/github.svg" alt="GitHub"></span>GitHub Foundations</div><a href="https://credly.com/go/WeUsnj6L?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/salesforce.svg" alt="Salesforce"></span>Salesforce Certified Platform Developer I</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/salesforce.svg" alt="Salesforce"></span>Salesforce Certified Associate</div><a href="https://sforce.co/verifycerts?trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-            <article class="trophy-card"><div class="trophy-head"><span class="trophy-icon"><img src="./assets/cert-icons/microsoft.svg" alt="Microsoft"></span>MCSA: Windows Server 2016</div><a href="https://credly.com/badges/0c4bc766-f06d-43e0-89d9-9aeaec5e159d?source=linked_in_profile&trk=public_profile_certification-title" target="_blank" rel="noopener noreferrer">Voir le certificat</a></article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="works" class="section">
-      <div class="container">
-        <h2>Œuvres déjà réalisées</h2>
-        <p class="section-lead">Quelques projets en ligne représentatifs de mon travail web.</p>
-        <div class="cards">
-          <article class="card"><h3>Ruben's Pizza</h3><p>Site vitrine restaurant avec presentation de marque et navigation simple.</p><p><a href="https://www.rubens-pizza.com" target="_blank" rel="noopener noreferrer">www.rubens-pizza.com</a></p></article>
-          <article class="card"><h3>Elsa & Ruben</h3><p>Site d'invitation de mariage avec design émotionnel et expérience mobile.</p><p><a href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">www.elsa-ruben.com</a></p></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="showcase" class="section">
-      <div class="container">
-        <h2>Solutions digitales : Web, Mobile et Salesforce</h2>
-        <p class="section-lead">Je conçois des expériences digitales complètes : sites web, applications Flutter pour iOS/Android et services Salesforce sur mesure.</p>
-        <div class="cards">
-          <article class="card"><h3>Sites web professionnels</h3><p>Sites vitrines, plateformes métier et expériences web optimisées performance, SEO et conversion.</p></article>
-          <article class="card"><h3>Applications Flutter iOS/Android</h3><p>Applications mobiles robustes pour clients B2B/B2C, avec UX moderne, synchronisation API et maintenance évolutive.</p></article>
-          <article class="card"><h3>Services Salesforce</h3><p>Architecture, développement, intégrations et accompagnement delivery pour des environnements Salesforce complexes.</p></article>
-        </div>
-        <div class="hero-actions" style="margin-top:24px;">
-          <button class="btn btn-primary" id="refreshBtn" type="button">Explorer les maquettes web</button>
-          <button class="btn btn-outline" id="openFirstBtn" type="button">Ouvrir une démo rapidement</button>
-        </div>
-        <p class="choice-meta" id="status">Détection en cours...</p>
-        <div id="list" class="choice-grid" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact-wrap">
-      <div class="container">
-        <div class="contact-layout">
+        <div class="media-col">
           <form id="contactForm" class="contact-form" method="post" action="/api/send-mail">
             <div class="form-grid">
-              <div class="field"><label for="fullName">Nom complet *</label><input id="fullName" name="fullName" required></div>
-              <div class="field"><label for="phone">Téléphone *</label><input id="phone" name="phone" required></div>
-              <div class="field"><label for="company">Entreprise</label><input id="company" name="company"></div>
-              <div class="field"><label for="serviceType">Type de service *</label><select id="serviceType" name="serviceType" required><option value="">Sélectionnez</option><option value="salesforce">Salesforce</option><option value="web">Site web</option><option value="mobile">Application mobile</option><option value="autre">Autre</option></select></div>
-              <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Décris ton besoin, tes objectifs et ton délai."></textarea></div>
+              <div class="field">
+                <label for="fullName">Nom complet *</label>
+                <input id="fullName" name="fullName" required>
+              </div>
+              <div class="field">
+                <label for="phone">Téléphone *</label>
+                <input id="phone" name="phone" required>
+              </div>
+              <div class="field">
+                <label for="company">Entreprise</label>
+                <input id="company" name="company">
+              </div>
+              <div class="field">
+                <label for="serviceType">Type de service *</label>
+                <select id="serviceType" name="serviceType" required>
+                  <option value="">Sélectionnez</option>
+                  <option value="salesforce">Salesforce</option>
+                  <option value="web">Site web</option>
+                  <option value="mobile">Application mobile</option>
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Décris ton besoin, tes objectifs et ton délai."></textarea>
+              </div>
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-top:14px;">Envoyer la demande</button>
+            <button type="submit" class="submit-btn">Envoyer la demande</button>
             <p id="formStatus" class="form-status-message" aria-live="polite"></p>
           </form>
         </div>
@@ -176,137 +148,240 @@
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container footer-row">
-      <nav class="footer-nav" aria-label="Navigation pied de page">
-        <a href="#about">À propos</a>
-        <a href="#services">Services</a>
-        <a href="#experience">Expérience</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#works">Œuvres</a>
-        <a href="#showcase">Solutions</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="social-links">
-        <a href="tel:+972584191197" aria-label="Téléphone" title="Téléphone"><i class="fa-solid fa-phone"></i></a>
-        <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/jeremie-nabet/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://www.instagram.com/JeremieNabet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://www.facebook.com/JeremieNabet" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+      <p>© 2026 Jérémie Nabet</p>
+      <div class="footer-social" aria-label="Moyens de contact">
+        <a href="tel:+972584191197" aria-label="Téléphone">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.06.35 2.2.54 3.4.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.52 21 3 13.48 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.2.19 2.34.54 3.4a1 1 0 0 1-.24 1l-2.2 2.4Z"/></svg>
+        </a>
+        <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.5 3.5A11 11 0 0 0 3.8 17.2L2 22l4.95-1.73A11 11 0 1 0 20.5 3.5Zm-8.48 17a9.1 9.1 0 0 1-4.6-1.25l-.33-.2-2.93 1.02 1-2.86-.22-.35a9.1 9.1 0 1 1 7.08 3.64Zm4.99-6.8c-.27-.13-1.6-.79-1.84-.88-.25-.09-.43-.13-.61.14-.18.26-.7.88-.86 1.06-.16.18-.31.2-.58.07-.27-.13-1.12-.41-2.13-1.3-.79-.7-1.33-1.56-1.49-1.82-.16-.27-.02-.41.12-.54.12-.12.27-.31.4-.46.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.13-.61-1.48-.84-2.03-.22-.52-.44-.45-.61-.46h-.52a1 1 0 0 0-.72.34c-.25.27-.95.93-.95 2.28 0 1.34.98 2.64 1.11 2.82.13.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.55.57.65.2 1.24.17 1.71.1.52-.08 1.6-.66 1.83-1.29.22-.64.22-1.18.16-1.29-.07-.1-.25-.17-.52-.3Z"/></svg>
+        </a>
+        <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.21.68-.48v-1.7c-2.78.6-3.37-1.17-3.37-1.17-.45-1.16-1.12-1.47-1.12-1.47-.91-.62.07-.61.07-.61 1 .08 1.53 1.04 1.53 1.04.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.63-1.34-2.22-.26-4.55-1.11-4.55-4.93 0-1.09.39-1.97 1.03-2.66-.1-.26-.45-1.31.1-2.73 0 0 .84-.27 2.75 1.02A9.6 9.6 0 0 1 12 6.8a9.6 9.6 0 0 1 2.5.34c1.91-1.3 2.75-1.02 2.75-1.02.55 1.42.2 2.47.1 2.73.64.69 1.03 1.57 1.03 2.66 0 3.83-2.34 4.66-4.57 4.92.36.31.67.92.67 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/jeremie-nabet/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.94 8.5a1.56 1.56 0 1 1 0-3.12 1.56 1.56 0 0 1 0 3.12ZM5.5 9.75h2.9V19h-2.9V9.75Zm4.68 0h2.78v1.26h.04c.39-.73 1.34-1.5 2.76-1.5 2.95 0 3.49 1.94 3.49 4.47V19h-2.9v-4.47c0-1.07-.02-2.44-1.49-2.44-1.5 0-1.72 1.16-1.72 2.36V19h-2.96V9.75Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/JeremieNabet/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.8A3.95 3.95 0 0 0 3.8 7.75v8.5a3.95 3.95 0 0 0 3.95 3.95h8.5a3.95 3.95 0 0 0 3.95-3.95v-8.5a3.95 3.95 0 0 0-3.95-3.95h-8.5Zm8.95 1.35a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8A3.2 3.2 0 1 0 12 15.2a3.2 3.2 0 0 0 0-6.4Z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/JeremieNabet" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7h2.35l.35-2.75H13.5V9.5c0-.8.22-1.35 1.37-1.35h1.46V5.67c-.25-.04-1.12-.11-2.13-.11-2.11 0-3.55 1.29-3.55 3.66v2.03H8.25V14h2.4v7h2.85Z"/></svg>
+        </a>
       </div>
-      <span class="footer-copy">© 2026 Jérémie Nabet</span>
+      <a class="back-to-top-arrow" href="#top" aria-label="Remonter en haut">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5.5 4.75 12.75l1.5 1.5L11 9.5V19h2V9.5l4.75 4.75 1.5-1.5L12 5.5z"/></svg>
+      </a>
     </div>
   </footer>
 
   <script>
-    const listEl = document.getElementById("list");
-    const statusEl = document.getElementById("status");
-    const refreshBtn = document.getElementById("refreshBtn");
-    const openFirstBtn = document.getElementById("openFirstBtn");
+    const logo = document.querySelector(".logo");
+    const logoName = logo ? logo.querySelector(".logo-name") : null;
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+    const splitFace = document.getElementById("splitFace");
+    const leftDynamicTexts = document.querySelectorAll(".dynamic-text-left");
+    const rightDynamicTexts = document.querySelectorAll(".dynamic-text-right");
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
+    const scrollSections = document.querySelectorAll("[data-scroll-section]");
 
-    async function existsIndexAt(path) {
-      try {
-        const response = await fetch(path + "index.html", { method: "HEAD", cache: "no-store" });
-        return response.ok;
-      } catch {
-        return false;
-      }
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        const isOpen = nav.classList.toggle("open");
+        document.body.classList.toggle("nav-open", isOpen);
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("open");
+          document.body.classList.remove("nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
     }
 
-    function renderCards(paths) {
-      listEl.innerHTML = "";
-      if (!paths.length) {
-        listEl.innerHTML = '<div class="empty">Aucune maquette détectée. Lance le site via un serveur local puis clique sur "Explorer les maquettes web".</div>';
-        return;
+    if (logo) {
+      let logoTimers = [];
+
+      function clearLogoTimers() {
+        logoTimers.forEach(function (timerId) {
+          clearTimeout(timerId);
+        });
+        logoTimers = [];
       }
 
-      function getFriendlyDesignData(path, index) {
-        const slug = path.replaceAll("/", "");
-        const numberMatch = slug.match(/(\d+)/);
-        const number = numberMatch ? Number(numberMatch[1]) : index + 1;
-        const presets = {
-          1: { name: "Design Classique", desc: "Présentation claire et structurée, idéale pour une image professionnelle.", tag: "Sobre" },
-          2: { name: "Design Premium", desc: "Style éditorial élégant pour valoriser une offre haut de gamme.", tag: "Élégant" },
-          3: { name: "Design Impact", desc: "Direction visuelle immersive orientée confiance et conversion.", tag: "Moderne" },
-          4: { name: "Design Créatif", desc: "Ambiance dynamique, parfaite pour les marques audacieuses.", tag: "Créatif" },
-          5: { name: "Design Tech Business", desc: "Positionnement orienté solutions digitales, apps métier et services Salesforce.", tag: "Business" }
-        };
-        return presets[number] || {
-          name: "Design " + number,
-          desc: "Template personnalisable selon votre activité et votre identité visuelle.",
-          tag: "Personnalisable"
-        };
-      }
+      function runLogoNameTyping() {
+        if (!logoName) return;
+        const firstName = logoName.dataset.firstName || "Jeremie";
+        const totalDuration = 4800;
+        const rollStartAt = 0;
+        const rollArrivalAt = Math.round(totalDuration * 0.12);
+        const rollTravelDuration = Math.max(rollArrivalAt - rollStartAt, 1);
+        const typeStep = rollTravelDuration / firstName.length;
+        const eraseStartAt = rollArrivalAt + 3000;
+        const eraseStep = 42;
 
-      const fragment = document.createDocumentFragment();
-      for (const [index, path] of paths.entries()) {
-        const data = getFriendlyDesignData(path, index);
-        const card = document.createElement("article");
-        card.className = "choice-card";
-        card.innerHTML =
-          "<span class=\"badge\">Disponible</span>" +
-          "<h3>" + data.name + "</h3>" +
-          "<p>" + data.desc + "</p>" +
-          "<div class=\"choice-preview\"><iframe src=\"/" + path + "\" title=\"Aperçu " + data.name + "\" loading=\"lazy\" tabindex=\"-1\" aria-hidden=\"true\"></iframe></div>" +
-          "<div class=\"choice-card-footer\">" +
-          "<span class=\"style-tag\">" + data.tag + "</span>" +
-          "<a href=\"/" + path + "\">Voir ce design</a>" +
-          "</div>";
-        fragment.appendChild(card);
-      }
-      listEl.appendChild(fragment);
-    }
+        logoName.textContent = "";
 
-    async function getFolderCandidatesFromServerRoot() {
-      try {
-        const response = await fetch("/", { cache: "no-store" });
-        if (!response.ok) return [];
-        const html = await response.text();
-        const matches = [...html.matchAll(/href="(template\/template-site-vitrine-[^"/]+\/)"/g)];
-        return [...new Set(matches.map((m) => m[1]))];
-      } catch {
-        return [];
-      }
-    }
-
-    async function getFolderCandidatesByProbe(max = 50) {
-      const candidates = [];
-      for (let i = 1; i <= max; i += 1) candidates.push("template/template-site-vitrine-" + i + "/");
-      const found = [];
-      for (const folder of candidates) {
-        if (await existsIndexAt("/" + folder)) found.push(folder);
-      }
-      return found;
-    }
-
-    async function scanDesignFolders() {
-      statusEl.textContent = "Détection dynamique des dossiers...";
-      const fromRoot = await getFolderCandidatesFromServerRoot();
-      let folders = [];
-
-      if (fromRoot.length) {
-        for (const folder of fromRoot) {
-          if (await existsIndexAt("/" + folder)) folders.push(folder);
+        for (let index = 1; index <= firstName.length; index += 1) {
+          const timerId = window.setTimeout(function () {
+            logoName.textContent = firstName.slice(0, index);
+          }, rollStartAt + Math.round(index * typeStep));
+          logoTimers.push(timerId);
         }
-      } else {
-        folders = await getFolderCandidatesByProbe();
+
+        for (let index = firstName.length - 1; index >= 0; index -= 1) {
+          const reverseIndex = (firstName.length - 1) - index;
+          const timerId = window.setTimeout(function () {
+            logoName.textContent = firstName.slice(0, index);
+          }, eraseStartAt + (reverseIndex * eraseStep));
+          logoTimers.push(timerId);
+        }
       }
 
-      folders.sort((a, b) => a.localeCompare(b, "fr", { numeric: true }));
-      renderCards(folders);
-      statusEl.textContent = folders.length
-        ? "Sélectionnez le design qui vous correspond."
-        : "Aucune maquette web détectée automatiquement.";
-      openFirstBtn.disabled = folders.length === 0;
-      openFirstBtn.onclick = function () {
-        if (folders[0]) window.location.href = "/" + folders[0];
-      };
+      logo.addEventListener("click", function () {
+        clearLogoTimers();
+        if (logoName) logoName.textContent = "";
+        logo.classList.remove("is-rolling");
+        void logo.offsetWidth;
+        logo.classList.add("is-rolling");
+        runLogoNameTyping();
+      });
+
+      logo.addEventListener("animationend", function (event) {
+        if (event.animationName === "logo-roll-right") {
+          clearLogoTimers();
+          if (logoName) logoName.textContent = "";
+          logo.classList.remove("is-rolling");
+        }
+      });
     }
 
-    refreshBtn.addEventListener("click", scanDesignFolders);
+    if (splitFace) {
+      const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+      const isMobileLayout = window.matchMedia("(max-width: 920px)");
+      let lastPointerMoveAt = 0;
+
+      function updateHeroFromRatio(ratio) {
+        const clamped = Math.max(0, Math.min(1, ratio));
+        const visualRatio = isMobileLayout.matches
+          ? clamped
+          : Math.max(0.14, Math.min(0.86, clamped));
+        const shift = (clamped - 0.5) * 2;
+        splitFace.style.setProperty("--split", String(visualRatio));
+        splitFace.style.setProperty("--hero-shift", shift.toFixed(3));
+
+        const faceRect = splitFace.getBoundingClientRect();
+        const splitAxisPosition = isMobileLayout.matches
+          ? (faceRect.top + (faceRect.height * visualRatio))
+          : (faceRect.left + (faceRect.width * visualRatio));
+
+        leftDynamicTexts.forEach(function (element) {
+          const rect = element.getBoundingClientRect();
+          const raw = isMobileLayout.matches
+            ? (((splitAxisPosition - rect.top) / (rect.height || 1)) * 100)
+            : (((splitAxisPosition - rect.left) / (rect.width || 1)) * 100);
+          const cut = Math.max(0, Math.min(100, raw));
+          element.style.setProperty("--text-cut", cut.toFixed(2) + "%");
+        });
+
+        rightDynamicTexts.forEach(function (element) {
+          const rect = element.getBoundingClientRect();
+          const raw = isMobileLayout.matches
+            ? (((splitAxisPosition - rect.top) / (rect.height || 1)) * 100)
+            : (((splitAxisPosition - rect.left) / (rect.width || 1)) * 100);
+          const cut = Math.max(0, Math.min(100, raw));
+          element.style.setProperty("--text-cut", cut.toFixed(2) + "%");
+        });
+      }
+
+      function updateHeroFromScroll() {
+        const rect = splitFace.getBoundingClientRect();
+        const viewportHeight = window.innerHeight || 1;
+        const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+        const heroProgress = Math.max(0, Math.min(1, progress));
+        splitFace.style.setProperty("--hero-progress", heroProgress.toFixed(3));
+        updateHeroFromRatio(progress);
+      }
+
+      splitFace.addEventListener("mousemove", function (event) {
+        const rect = splitFace.getBoundingClientRect();
+        const position = isMobileLayout.matches ? (event.clientY - rect.top) : (event.clientX - rect.left);
+        const length = isMobileLayout.matches ? rect.height : rect.width;
+        lastPointerMoveAt = Date.now();
+        updateHeroFromRatio(position / (length || 1));
+      });
+      splitFace.addEventListener("mouseleave", function () {
+        updateHeroFromScroll();
+      });
+
+      window.addEventListener("scroll", function () {
+        if (Date.now() - lastPointerMoveAt < 140) return;
+        updateHeroFromScroll();
+      }, { passive: true });
+
+      window.addEventListener("resize", function () {
+        if (Date.now() - lastPointerMoveAt < 140) return;
+        updateHeroFromScroll();
+      });
+
+      if (isCoarsePointer) {
+        let touchStartAxis = 0;
+        let baseRatio = 0.5;
+
+        splitFace.addEventListener("touchstart", function (event) {
+          touchStartAxis = isMobileLayout.matches ? event.touches[0].clientY : event.touches[0].clientX;
+          baseRatio = 0.5;
+          splitFace.classList.add("is-dragging");
+        }, { passive: true });
+
+        splitFace.addEventListener("touchmove", function (event) {
+          const currentAxis = isMobileLayout.matches ? event.touches[0].clientY : event.touches[0].clientX;
+          const delta = currentAxis - touchStartAxis;
+          const rect = splitFace.getBoundingClientRect();
+          const axisLength = isMobileLayout.matches ? rect.height : rect.width;
+          const ratio = baseRatio + (delta / (axisLength || 1));
+          updateHeroFromRatio(ratio);
+        }, { passive: true });
+
+        splitFace.addEventListener("touchend", function () {
+          splitFace.classList.remove("is-dragging");
+          updateHeroFromScroll();
+        });
+      }
+
+      updateHeroFromScroll();
+    }
+
+    if (scrollSections.length > 0) {
+      const observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+            } else if (entry.boundingClientRect.top > 0) {
+              entry.target.classList.remove("is-visible");
+            }
+          });
+        },
+        {
+          root: null,
+          threshold: 0.18,
+          rootMargin: "0px 0px -8% 0px"
+        }
+      );
+
+      scrollSections.forEach(function (section, index) {
+        section.style.setProperty("--section-delay", String(index * 45) + "ms");
+        observer.observe(section);
+      });
+    }
+
     if (contactForm) {
       contactForm.addEventListener("submit", async function (event) {
         event.preventDefault();
@@ -316,7 +391,6 @@
         try {
           const formData = new FormData(contactForm);
           const payload = Object.fromEntries(formData.entries());
-
           const response = await fetch("/api/send-mail", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -335,11 +409,6 @@
         }
       });
     }
-    const trophyTrack = document.getElementById("trophyTrack");
-    if (trophyTrack) {
-      trophyTrack.innerHTML += trophyTrack.innerHTML;
-    }
-    scanDesignFolders();
   </script>
 </body>
 </html>

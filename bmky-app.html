@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet BMKY App | Jérémie Nabet</title>
+  <meta name="description" content="Présentation du projet BMKY App: application Flutter connectée à Salesforce pour la gestion opérationnelle du Beth Amidrash.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="./index.html" aria-label="Retour à l'accueil">
+        <span class="logo-badge" aria-hidden="true">JN</span>
+      </a>
+      <button class="menu-toggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="site-nav" id="mainNav">
+        <span class="nav-label" aria-hidden="true">Pages</span>
+        <a href="./about.html">about</a>
+        <a href="./index.html#work">portfolio</a>
+        <a href="./index.html#contact">contact</a>
+        <span class="nav-label nav-label-languages" aria-hidden="true">Langues</span>
+        <a class="lang-link" href="./index-en.html">en</a>
+        <a class="lang-link" href="./index-he.html">he</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section-light bmky-hero">
+      <div class="container bmky-hero-grid">
+        <div class="text-col">
+          <h1>BMKY App</h1>
+          <p class="intro">Application Flutter CRM connectée à Salesforce, développée pour le Beth Amidrash de mon quartier.</p>
+          <p>Cette app pilote les contacts et donateurs, les promesses de don, les paiements, les actions terrain, les notifications et le suivi statistique, avec une expérience mobile fluide pour les équipes.</p>
+          <a class="work-link" href="./index.html#work">Retour aux projets</a>
+        </div>
+        <div class="media-col">
+          <img class="bmky-cover" src="./assets/BMKY_app/BMKY_image.jpeg" alt="BMKY App - identité visuelle du projet">
+        </div>
+      </div>
+    </section>
+
+    <section class="section-contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vue d'ensemble</h2>
+        </div>
+        <p class="bmky-lead">Une plateforme mobile de pilotage opérationnel avec un parcours simple: démarrage sécurisé, navigation à 5 onglets et synchronisation continue avec Salesforce.</p>
+        <div class="bmky-points">
+          <article class="bmky-point">
+            <h3>Parcours utilisateur</h3>
+            <p>SplashScreen, initialisation Firebase, permissions push, récupération token FCM puis HomePage avec navigation Actions, Recherche, Stats, Notifs et PDF.</p>
+          </article>
+          <article class="bmky-point">
+            <h3>Modules clés</h3>
+            <p>Actions événements, recherche contacts, vue compte complète, suivi analytique annuel, centre de notifications paiement et génération PDF opérationnelle.</p>
+          </article>
+          <article class="bmky-point">
+            <h3>Intégrations</h3>
+            <p>Salesforce REST + Apex custom, Firebase Messaging, Hebcal pour horaires Shabbat et services device pour appel, SMS et email depuis les fiches.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-dark">
+      <div class="container">
+        <div class="section-title">
+          <h2>Fonctionnalités développées</h2>
+        </div>
+        <div class="bmky-feature-grid">
+          <article class="bmky-feature-card">
+            <h3>Actions</h3>
+            <p>Gestion des événements, création d'actions liées aux contacts et logique métier de suppression douce pour un historique propre.</p>
+          </article>
+          <article class="bmky-feature-card">
+            <h3>Recherche & Account 360</h3>
+            <p>Recherche de comptes, filtre des comptes endettés, consultation des montants dus et vue détaillée compte/contacts/transactions.</p>
+          </article>
+          <article class="bmky-feature-card">
+            <h3>Stats & pilotage</h3>
+            <p>Dashboard annuel avec agrégations mensuelles paiements/donations et visualisation graphique pour suivre l'activité en temps réel.</p>
+          </article>
+          <article class="bmky-feature-card">
+            <h3>Notifications</h3>
+            <p>Centre de notifications des paiements, filtres et marquage lu/non lu pour accélérer le traitement quotidien.</p>
+          </article>
+          <article class="bmky-feature-card">
+            <h3>PDF</h3>
+            <p>Génération de documents métiers (Tofess 46 et horaires Shabbat) avec options de partage et export direct mobile.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Captures de l'application</h2>
+        </div>
+        <div class="bmky-gallery">
+          <figure class="bmky-shot">
+            <img src="./assets/BMKY_app/Actions.png" alt="BMKY App - écran Actions">
+            <figcaption>Actions</figcaption>
+          </figure>
+          <figure class="bmky-shot">
+            <img src="./assets/BMKY_app/recherche.png" alt="BMKY App - écran Recherche">
+            <figcaption>Recherche</figcaption>
+          </figure>
+          <figure class="bmky-shot">
+            <img src="./assets/BMKY_app/Stats.png" alt="BMKY App - écran Stats">
+            <figcaption>Stats</figcaption>
+          </figure>
+          <figure class="bmky-shot">
+            <img src="./assets/BMKY_app/notifs.png" alt="BMKY App - écran Notifications">
+            <figcaption>Notifs</figcaption>
+          </figure>
+          <figure class="bmky-shot">
+            <img src="./assets/BMKY_app/pdf.png" alt="BMKY App - écran PDF">
+            <figcaption>PDF</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Jérémie Nabet</p>
+      <a class="back-to-top-arrow" href="#top" aria-label="Remonter en haut">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5.5 4.75 12.75l1.5 1.5L11 9.5V19h2V9.5l4.75 4.75 1.5-1.5L12 5.5z"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+
+    if (toggle && nav) {
+      toggle.addEventListener("click", function () {
+        const isOpen = nav.classList.toggle("open");
+        document.body.classList.toggle("nav-open", isOpen);
+        toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      });
+
+      nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          nav.classList.remove("open");
+          document.body.classList.remove("nav-open");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  </script>
+</body>
+</html>
