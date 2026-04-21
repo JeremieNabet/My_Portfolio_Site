@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jérémie Nabet | Senior Salesforce Full Stack Developer</title>
   <meta name="description" content="Portfolio de Jérémie Nabet, Senior Salesforce Full Stack Developer (8x certifié), MuleSoft Developer et expert web/mobile.">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
-  <link rel="apple-touch-icon" href="./favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#home" aria-label="Accueil Jérémie Nabet">
-        <img src="./Jeremie_Logo.jpeg" alt="Logo Jérémie Nabet" class="brand-logo">
+      <a class="brand" href="#home">
+        <img class="brand-logo" src="./logo-jn-transparent.png" alt="Logo Jérémie Nabet">
         <span>Jérémie Nabet</span>
       </a>
       <nav class="nav-links">
@@ -29,16 +30,21 @@
         <a href="#works">Œuvres</a>
         <a href="#showcase">Solutions</a>
         <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary nav-contact-btn">Me contacter</a>
       </nav>
     </div>
   </header>
 
   <main id="home">
+    <section class="entry-illustration" aria-label="Illustration de présentation">
+      <img src="./Jeremie_Logo_no_bg.png" alt="Illustration de présentation du site">
+    </section>
+
     <section class="hero">
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Portfolio</p>
-          <h1>Jérémie Nabet, Senior Salesforce Full Stack Developer et MuleSoft Developer.</h1>
+          <h1>Senior Salesforce Full Stack Developer et MuleSoft Developer.</h1>
           <p class="lead">Basé en Israël, j'interviens sur des écosystèmes Salesforce complexes (Apex, LWC, intégrations API) avec une approche orientée qualité, performance et impact métier.</p>
           <div class="hero-actions">
             <a href="#showcase" class="btn btn-primary">Choisir un design</a>
@@ -152,15 +158,6 @@
     <section id="contact" class="section contact-wrap">
       <div class="container">
         <div class="contact-layout">
-          <aside class="contact-info">
-            <h3>Pourquoi me contacter ?</h3>
-            <ul>
-              <li><i class="fa-solid fa-circle-check"></i> Expertise Salesforce, web et mobile Flutter</li>
-              <li><i class="fa-solid fa-circle-check"></i> Accompagnement complet du cadrage au delivery</li>
-              <li><i class="fa-solid fa-circle-check"></i> Solutions orientées business et performance</li>
-              <li><i class="fa-solid fa-circle-check"></i> Réponse rapide avec plan d'action concret</li>
-            </ul>
-          </aside>
           <form id="contactForm" class="contact-form" method="post" action="/api/send-mail">
             <div class="form-grid">
               <div class="field"><label for="fullName">Nom complet *</label><input id="fullName" name="fullName" required></div>
@@ -179,10 +176,7 @@
 
   <footer class="footer">
     <div class="container footer-row">
-      <div class="footer-brand">
-        <img src="./Jeremie_Logo.jpeg" alt="Logo Jérémie Nabet" class="footer-logo">
-        <span>© <span id="year"></span> Jérémie Nabet</span>
-      </div>
+      <span>© <span id="year"></span> Jérémie Nabet</span>
       <div class="social-links">
         <a href="tel:+972584191197" aria-label="Téléphone" title="Téléphone"><i class="fa-solid fa-phone"></i></a>
         <a href="https://wa.me/972584191197" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
