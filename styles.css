@@ -393,7 +393,7 @@ h1 {
 }
 .contact-layout {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   align-items: start;
 }
@@ -432,6 +432,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 20px;
+  width: 100%;
 }
 .form-grid {
   display: grid;
@@ -552,5 +553,10 @@ h1 {
   }
   .social-links {
     justify-self: center;
+  }
+}
+@media (min-width: 1200px) {
+  .contact-wrap .container {
+    width: min(1400px, 96vw);
   }
 }
