@@ -553,6 +553,10 @@ h1 {
 @media (max-width: 920px) {
   .hero-grid, .cards, .kpis { grid-template-columns: 1fr; }
   .nav-links a:not(.btn-primary) { display: none; }
+  .nav-links a.lang-link {
+    display: inline-flex;
+    font-weight: 700;
+  }
   .contact-layout, .form-grid { grid-template-columns: 1fr; }
   .choice-preview { height: 170px; }
   .footer-row {
