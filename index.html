@@ -9,17 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="./assets/favicons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body id="top">
   <header class="site-header">
     <div class="container nav">
       <a class="brand" href="#top">
-        <img class="brand-logo" src="./logo-jn-transparent.png" alt="Logo Jérémie Nabet">
+        <img class="brand-logo" src="./assets/images/logo-jn-transparent.png" alt="Logo Jérémie Nabet">
         <span>Jérémie Nabet</span>
       </a>
       <nav class="nav-links">
@@ -30,6 +30,8 @@
         <a href="#works">Œuvres</a>
         <a href="#showcase">Solutions</a>
         <a href="#contact">Contact</a>
+        <a href="./index-en.html">EN</a>
+        <a href="./index-he.html">HE</a>
         <a href="#contact" class="btn btn-primary nav-contact-btn">Me contacter</a>
       </nav>
     </div>
@@ -37,7 +39,7 @@
 
   <main id="home">
     <section class="entry-illustration" aria-label="Illustration de présentation">
-      <img src="./Jeremie_Logo_no_bg.png" alt="Illustration de présentation du site">
+      <img src="./assets/images/Jeremie_Logo_no_bg.png" alt="Illustration de présentation du site">
     </section>
 
     <section class="hero">
@@ -263,7 +265,7 @@
         const response = await fetch("/", { cache: "no-store" });
         if (!response.ok) return [];
         const html = await response.text();
-        const matches = [...html.matchAll(/href="(template-site-vitrine-[^"/]+\/)"/g)];
+        const matches = [...html.matchAll(/href="(template\/template-site-vitrine-[^"/]+\/)"/g)];
         return [...new Set(matches.map((m) => m[1]))];
       } catch {
         return [];
@@ -272,7 +274,7 @@
 
     async function getFolderCandidatesByProbe(max = 50) {
       const candidates = [];
-      for (let i = 1; i <= max; i += 1) candidates.push("template-site-vitrine-" + i + "/");
+      for (let i = 1; i <= max; i += 1) candidates.push("template/template-site-vitrine-" + i + "/");
       const found = [];
       for (const folder of candidates) {
         if (await existsIndexAt("/" + folder)) found.push(folder);

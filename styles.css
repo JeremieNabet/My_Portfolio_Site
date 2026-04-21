@@ -302,6 +302,15 @@ h1 {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+[dir="rtl"] .trophy-scroller {
+  overflow: hidden;
+  direction: ltr;
+}
+[dir="rtl"] .trophy-track {
+  animation: trophy-scroll 48s linear infinite;
+  width: max-content;
+  direction: ltr;
+}
 .choice-meta {
   margin-top: 14px;
   color: var(--muted);
