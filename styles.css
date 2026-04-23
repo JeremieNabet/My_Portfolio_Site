@@ -769,6 +769,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
   .split-face {
     min-height: calc(100vh - 72px);
     grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
     background: linear-gradient(
       180deg,
       #ecf1f7 0%,
@@ -787,7 +788,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
   }
 
   .panel {
-    min-height: 50%;
+    min-height: 0;
     align-items: center;
     justify-content: center;
     text-align: center;

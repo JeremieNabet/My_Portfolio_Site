@@ -303,10 +303,15 @@
       function updateHeroFromScroll() {
         const rect = splitFace.getBoundingClientRect();
         const viewportHeight = window.innerHeight || 1;
-        const progress = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-        const heroProgress = Math.max(0, Math.min(1, progress));
+        const header = document.querySelector(".site-header");
+        const headerBottom = header ? header.getBoundingClientRect().bottom : 0;
+        const usableTop = Math.max(0, Math.min(viewportHeight, headerBottom));
+        const viewportAnchor = usableTop + ((viewportHeight - usableTop) * 0.5);
+        const centeredRatio = (viewportAnchor - rect.top) / (rect.height || 1);
+        const scrollRatio = (viewportHeight - rect.top) / (viewportHeight + rect.height);
+        const heroProgress = Math.max(0, Math.min(1, scrollRatio));
         splitFace.style.setProperty("--hero-progress", heroProgress.toFixed(3));
-        updateHeroFromRatio(progress);
+        updateHeroFromRatio(isMobileLayout.matches ? centeredRatio : scrollRatio);
       }
 
       splitFace.addEventListener("mousemove", function (event) {
