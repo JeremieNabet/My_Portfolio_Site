@@ -102,14 +102,14 @@ a {
 .menu-toggle {
   display: none;
   width: 30px;
-  height: 24px;
+  height: 28px;
   border: 0;
   background: transparent;
   border-radius: 0;
   padding: 0;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 7px;
   flex-direction: column;
   cursor: pointer;
   margin-right: -6px;
@@ -117,8 +117,8 @@ a {
 
 .menu-toggle span {
   display: block;
-  width: 18px;
-  height: 2px;
+  width: 20px;
+  height: 2.5px;
   border-radius: 999px;
   background: #222833;
   transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), opacity 220ms ease;
