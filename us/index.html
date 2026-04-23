@@ -14,7 +14,7 @@
 <body id="top">
   <header class="site-header"><div class="container header-row"><a class="logo" href="#top" aria-label="Back to top"><span class="logo-badge" aria-hidden="true">JN</span><span class="logo-name" aria-hidden="true" data-first-name="Jeremie Nabet"></span></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button><nav class="site-nav" id="mainNav"><span class="nav-label" aria-hidden="true">Pages</span><a href="./about.html">about</a><a href="#work">portfolio</a><a href="#contact">contact</a><span class="nav-label nav-label-languages" aria-hidden="true">Languages</span><a class="lang-link" href="/fr/">fr</a><a class="lang-link" href="/he/">he</a></nav></div></header>
   <main>
-    <section class="hero scroll-section" data-scroll-section><div class="container"><div class="split-face" id="splitFace"><a class="panel panel-left" href="#contact"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-left">designer</h1><p class="dynamic-text dynamic-text-left">Product design, UI systems and real-world experiences.</p></div></a><a class="panel panel-right" href="./about.html"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-right"><span>&lt;</span>coder<span>&gt;</span></h1><p class="dynamic-text dynamic-text-right">Clean, scalable and performant web and Salesforce development.</p></div></a></div></div></section>
+    <section class="hero scroll-section" data-scroll-section><div class="container"><div class="split-face" id="splitFace"><a class="panel panel-left" href="#contact"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-left">designer</h1><p class="dynamic-text dynamic-text-left">Product design, UI systems and real-world experiences.</p></div></a><a class="panel panel-right" href="./about.html"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-right"><span>&lt;</span>coder<span>&gt;</span></h1><p class="dynamic-text dynamic-text-right">Clean, scalable and performant web development.</p></div></a></div></div></section>
     <section id="work" class="section-dark scroll-section" data-scroll-section><div class="container"><div class="section-title"><h2>Some of my latest work</h2></div><ul class="work-grid"><li class="work-card"><iframe src="https://www.rubens-pizza.com/fr" title="Ruben's Pizza" loading="lazy" scrolling="no"></iframe><div class="work-copy"><h3>Ruben's Pizza</h3><p>Restaurant showcase website.</p><a class="work-link" href="https://www.rubens-pizza.com" target="_blank" rel="noopener noreferrer">View website</a></div></li><li class="work-card"><iframe src="https://www.elsa-ruben.com/fr" title="Elsa & Ruben" loading="lazy" scrolling="no"></iframe><div class="work-copy"><h3>Elsa & Ruben</h3><p>Premium event website, fully responsive.</p><a class="work-link" href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">View website</a></div></li><li class="work-card"><a href="./bmky-app.html"><img src="../assets/BMKY_app/BMKY_image.jpeg" alt="BMKY Flutter App"></a><div class="work-copy"><h3>Beth Amidrash App</h3><p>Flutter CRM app connected to Salesforce.</p><a class="work-link" href="./bmky-app.html">View project</a></div></li></ul></div></section>
     <section id="contact" class="section-contact scroll-section" data-scroll-section><div class="container split-content"><div class="text-col"><h2>contact.</h2><p class="intro">Let's discuss your Salesforce, web or mobile project.</p></div><div class="media-col"><form id="contactForm" class="contact-form" method="post" action="/api/send-mail"><div class="form-grid"><div class="field"><label for="fullName">Full name *</label><input id="fullName" name="fullName" required></div><div class="field"><label for="phone">Phone *</label><input id="phone" name="phone" required></div><div class="field"><label for="company">Company</label><input id="company" name="company"></div><div class="field"><label for="serviceType">Service type *</label><select id="serviceType" name="serviceType" required><option value="">Select</option><option value="salesforce">Salesforce</option><option value="web">Website</option><option value="mobile">Mobile app</option><option value="autre">Other</option></select></div><div class="field full"><label for="message">Message</label><textarea id="message" name="message"></textarea></div></div><button type="submit" class="submit-btn">Send</button><p id="formStatus" class="form-status-message" aria-live="polite"></p></form></div></div></section>
   </main>
@@ -27,6 +27,8 @@
     const splitFace = document.getElementById("splitFace");
     const leftDynamicTexts = document.querySelectorAll(".dynamic-text-left");
     const rightDynamicTexts = document.querySelectorAll(".dynamic-text-right");
+    const coderHeading = splitFace ? splitFace.querySelector(".panel-right h1.dynamic-text-right") : null;
+    const coderParagraph = splitFace ? splitFace.querySelector(".panel-right p.dynamic-text-right") : null;
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
     const scrollSections = document.querySelectorAll("[data-scroll-section]");
@@ -69,6 +71,56 @@
       const isMobileLayout = window.matchMedia("(max-width: 920px)");
       let lastPointerMoveAt = 0;
 
+      let hasUserDrivenSplit = false;
+      let isCoderTyping = false;
+      let wasOverCoder = false;
+      const coderLabel = coderHeading
+        ? (coderHeading.textContent || "<coder>").replace(/\s+/g, "").trim()
+        : "<coder>";
+      const coderDescriptionLabel = coderParagraph
+        ? (coderParagraph.textContent || "").trim()
+        : "";
+
+      function startCoderTyping() {
+        if (!coderHeading || isCoderTyping) return;
+        isCoderTyping = true;
+        coderHeading.textContent = "";
+        if (coderParagraph) coderParagraph.textContent = "";
+        coderHeading.classList.add("is-code-typing");
+
+        let headingIndex = 0;
+        function typeHeadingNext() {
+          headingIndex += 1;
+          coderHeading.textContent = coderLabel.slice(0, headingIndex);
+          if (headingIndex < coderLabel.length) {
+            window.setTimeout(typeHeadingNext, 170);
+            return;
+          }
+
+          if (!coderParagraph || !coderDescriptionLabel) {
+            coderHeading.classList.remove("is-code-typing");
+            isCoderTyping = false;
+            return;
+          }
+
+          let paragraphIndex = 0;
+          function typeParagraphNext() {
+            paragraphIndex += 1;
+            coderParagraph.textContent = coderDescriptionLabel.slice(0, paragraphIndex);
+            if (paragraphIndex < coderDescriptionLabel.length) {
+              window.setTimeout(typeParagraphNext, 90);
+            } else {
+              coderHeading.classList.remove("is-code-typing");
+              isCoderTyping = false;
+            }
+          }
+
+          window.setTimeout(typeParagraphNext, 520);
+        }
+
+        window.setTimeout(typeHeadingNext, 260);
+      }
+
       function updateHeroFromRatio(ratio) {
         const clamped = Math.max(0, Math.min(1, ratio));
         const visualRatio = isMobileLayout.matches ? clamped : Math.max(0.14, Math.min(0.86, clamped));
@@ -80,6 +132,27 @@
         const splitAxisPosition = isMobileLayout.matches
           ? (faceRect.top + (faceRect.height * visualRatio))
           : (faceRect.left + (faceRect.width * visualRatio));
+
+        if (coderHeading) {
+          const coderRect = coderHeading.getBoundingClientRect();
+          const coderCenter = isMobileLayout.matches
+            ? (coderRect.top + (coderRect.height * 0.5))
+            : (coderRect.left + (coderRect.width * 0.5));
+          const isOnDarkSide = coderCenter >= splitAxisPosition;
+          coderHeading.style.setProperty("--coder-cursor-color", isOnDarkSide ? "#f4f7fc" : "#2f4f78");
+        }
+
+        if (hasUserDrivenSplit && coderHeading) {
+          const coderRect = coderHeading.getBoundingClientRect();
+          const coderThreshold = isMobileLayout.matches
+            ? (coderRect.top + (coderRect.height * 0.5))
+            : (coderRect.left + (coderRect.width * 0.5));
+          const isOverCoder = splitAxisPosition >= coderThreshold;
+          if (isOverCoder && !wasOverCoder) {
+            startCoderTyping();
+          }
+          wasOverCoder = isOverCoder;
+        }
 
         leftDynamicTexts.forEach(function (element) {
           const rect = element.getBoundingClientRect();
@@ -106,14 +179,19 @@
         const usableTop = Math.max(0, Math.min(viewportHeight, headerBottom));
         const viewportAnchor = usableTop + ((viewportHeight - usableTop) * 0.5);
         const centeredRatio = (viewportAnchor - rect.top) / (rect.height || 1);
+        const centeredAtTop = (viewportHeight - usableTop) / (2 * (rect.height || 1));
+        const mobileTargetAtTop = 0.5;
+        const mobileOffset = centeredAtTop - mobileTargetAtTop;
+        const mobileScrollRatio = centeredRatio - mobileOffset;
         const scrollRatio = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-        updateHeroFromRatio(isMobileLayout.matches ? centeredRatio : scrollRatio);
+        updateHeroFromRatio(isMobileLayout.matches ? mobileScrollRatio : scrollRatio);
       }
 
       splitFace.addEventListener("mousemove", function (event) {
         const rect = splitFace.getBoundingClientRect();
         const position = isMobileLayout.matches ? (event.clientY - rect.top) : (event.clientX - rect.left);
         const length = isMobileLayout.matches ? rect.height : rect.width;
+        hasUserDrivenSplit = true;
         lastPointerMoveAt = Date.now();
         updateHeroFromRatio(position / (length || 1));
       });
@@ -124,6 +202,7 @@
 
       window.addEventListener("scroll", function () {
         if (Date.now() - lastPointerMoveAt < 140) return;
+        hasUserDrivenSplit = true;
         updateHeroFromScroll();
       }, { passive: true });
 
@@ -143,7 +222,8 @@
         }, { passive: true });
 
         splitFace.addEventListener("touchmove", function (event) {
-          const currentAxis = isMobileLayout.matches ? event.touches[0].clientY : event.touches[0].clientX;
+          hasUserDrivenSplit = true;
+            const currentAxis = isMobileLayout.matches ? event.touches[0].clientY : event.touches[0].clientX;
           const delta = currentAxis - touchStartAxis;
           const rect = splitFace.getBoundingClientRect();
           const axisLength = isMobileLayout.matches ? rect.height : rect.width;

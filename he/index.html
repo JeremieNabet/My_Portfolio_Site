@@ -31,7 +31,7 @@
     </div>
   </header>
   <main>
-    <section class="hero scroll-section" data-scroll-section><div class="container"><div class="split-face" id="splitFace"><a class="panel panel-left" href="#contact"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-left">designer</h1><p class="dynamic-text dynamic-text-left">עיצוב מוצר וחוויית משתמש ממוקדת שימוש אמיתי.</p></div></a><a class="panel panel-right" href="./about.html"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-right"><span>&lt;</span>coder<span>&gt;</span></h1><p class="dynamic-text dynamic-text-right">פיתוח נקי, יציב וסקיילבילי לווב ול-Salesforce.</p></div></a></div></div></section>
+    <section class="hero scroll-section" data-scroll-section><div class="container"><div class="split-face" id="splitFace"><a class="panel panel-left" href="#contact"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-left">designer</h1><p class="dynamic-text dynamic-text-left">עיצוב מוצר וחוויית משתמש ממוקדת שימוש אמיתי.</p></div></a><a class="panel panel-right" href="./about.html"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-right"><span>&lt;</span>coder<span>&gt;</span></h1><p class="dynamic-text dynamic-text-right">פיתוח נקי, יציב וסקיילבילי לווב.</p></div></a></div></div></section>
     <section id="work" class="section-dark scroll-section" data-scroll-section><div class="container"><div class="section-title"><h2>Some of my latest work</h2></div><ul class="work-grid"><li class="work-card"><iframe src="https://www.rubens-pizza.com/fr" title="Ruben's Pizza" loading="lazy" scrolling="no"></iframe><div class="work-copy"><h3>Ruben's Pizza</h3><p>אתר תדמית למסעדה.</p><a class="work-link" href="https://www.rubens-pizza.com" target="_blank" rel="noopener noreferrer">לצפייה</a></div></li><li class="work-card"><iframe src="https://www.elsa-ruben.com/fr" title="Elsa & Ruben" loading="lazy" scrolling="no"></iframe><div class="work-copy"><h3>Elsa & Ruben</h3><p>אתר אירוע פרימיום רספונסיבי.</p><a class="work-link" href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">לצפייה</a></div></li><li class="work-card"><a href="./bmky-app.html"><img src="../assets/BMKY_app/BMKY_image.jpeg" alt="BMKY Flutter App"></a><div class="work-copy"><h3>Beth Amidrash App</h3><p>אפליקציית CRM ב-Flutter מחוברת ל-Salesforce.</p><a class="work-link" href="./bmky-app.html">לפרויקט</a></div></li></ul></div></section>
     <section id="contact" class="section-contact scroll-section" data-scroll-section><div class="container split-content"><div class="text-col"><h2>contact.</h2><p class="intro">בואו נדבר על פרויקט Salesforce, web או mobile.</p></div><div class="media-col"><form id="contactForm" class="contact-form" method="post" action="/api/send-mail"><div class="form-grid"><div class="field"><label for="fullName">שם מלא *</label><input id="fullName" name="fullName" required></div><div class="field"><label for="phone">טלפון *</label><input id="phone" name="phone" required></div><div class="field"><label for="company">חברה</label><input id="company" name="company"></div><div class="field"><label for="serviceType">סוג שירות *</label><select id="serviceType" name="serviceType" required><option value="">בחר</option><option value="salesforce">Salesforce</option><option value="web">אתר</option><option value="mobile">אפליקציה</option><option value="autre">אחר</option></select></div><div class="field full"><label for="message">הודעה</label><textarea id="message" name="message"></textarea></div></div><button type="submit" class="submit-btn">שליחה</button><p id="formStatus" class="form-status-message" aria-live="polite"></p></form></div></div></section>
   </main>
@@ -44,6 +44,8 @@
     const splitFace = document.getElementById("splitFace");
     const leftDynamicTexts = document.querySelectorAll(".dynamic-text-left");
     const rightDynamicTexts = document.querySelectorAll(".dynamic-text-right");
+    const coderHeading = splitFace ? splitFace.querySelector(".panel-right h1.dynamic-text-right") : null;
+    const coderParagraph = splitFace ? splitFace.querySelector(".panel-right p.dynamic-text-right") : null;
     const contactForm = document.getElementById("contactForm");
     const formStatus = document.getElementById("formStatus");
     const scrollSections = document.querySelectorAll("[data-scroll-section]");
@@ -86,6 +88,56 @@
       const isMobileLayout = window.matchMedia("(max-width: 920px)");
       let lastPointerMoveAt = 0;
 
+      let hasUserDrivenSplit = false;
+      let isCoderTyping = false;
+      let wasOverCoder = false;
+      const coderLabel = coderHeading
+        ? (coderHeading.textContent || "<coder>").replace(/\s+/g, "").trim()
+        : "<coder>";
+      const coderDescriptionLabel = coderParagraph
+        ? (coderParagraph.textContent || "").trim()
+        : "";
+
+      function startCoderTyping() {
+        if (!coderHeading || isCoderTyping) return;
+        isCoderTyping = true;
+        coderHeading.textContent = "";
+        if (coderParagraph) coderParagraph.textContent = "";
+        coderHeading.classList.add("is-code-typing");
+
+        let headingIndex = 0;
+        function typeHeadingNext() {
+          headingIndex += 1;
+          coderHeading.textContent = coderLabel.slice(0, headingIndex);
+          if (headingIndex < coderLabel.length) {
+            window.setTimeout(typeHeadingNext, 170);
+            return;
+          }
+
+          if (!coderParagraph || !coderDescriptionLabel) {
+            coderHeading.classList.remove("is-code-typing");
+            isCoderTyping = false;
+            return;
+          }
+
+          let paragraphIndex = 0;
+          function typeParagraphNext() {
+            paragraphIndex += 1;
+            coderParagraph.textContent = coderDescriptionLabel.slice(0, paragraphIndex);
+            if (paragraphIndex < coderDescriptionLabel.length) {
+              window.setTimeout(typeParagraphNext, 90);
+            } else {
+              coderHeading.classList.remove("is-code-typing");
+              isCoderTyping = false;
+            }
+          }
+
+          window.setTimeout(typeParagraphNext, 520);
+        }
+
+        window.setTimeout(typeHeadingNext, 260);
+      }
+
       function updateHeroFromRatio(ratio) {
         const clamped = Math.max(0, Math.min(1, ratio));
         const visualRatio = isMobileLayout.matches ? clamped : Math.max(0.14, Math.min(0.86, clamped));
@@ -97,6 +149,27 @@
         const splitAxisPosition = isMobileLayout.matches
           ? (faceRect.top + (faceRect.height * visualRatio))
           : (faceRect.left + (faceRect.width * visualRatio));
+
+        if (coderHeading) {
+          const coderRect = coderHeading.getBoundingClientRect();
+          const coderCenter = isMobileLayout.matches
+            ? (coderRect.top + (coderRect.height * 0.5))
+            : (coderRect.left + (coderRect.width * 0.5));
+          const isOnDarkSide = coderCenter >= splitAxisPosition;
+          coderHeading.style.setProperty("--coder-cursor-color", isOnDarkSide ? "#f4f7fc" : "#2f4f78");
+        }
+
+        if (hasUserDrivenSplit && coderHeading) {
+          const coderRect = coderHeading.getBoundingClientRect();
+          const coderThreshold = isMobileLayout.matches
+            ? (coderRect.top + (coderRect.height * 0.5))
+            : (coderRect.left + (coderRect.width * 0.5));
+          const isOverCoder = splitAxisPosition >= coderThreshold;
+          if (isOverCoder && !wasOverCoder) {
+            startCoderTyping();
+          }
+          wasOverCoder = isOverCoder;
+        }
 
         leftDynamicTexts.forEach(function (element) {
           const rect = element.getBoundingClientRect();
@@ -123,14 +196,19 @@
         const usableTop = Math.max(0, Math.min(viewportHeight, headerBottom));
         const viewportAnchor = usableTop + ((viewportHeight - usableTop) * 0.5);
         const centeredRatio = (viewportAnchor - rect.top) / (rect.height || 1);
+        const centeredAtTop = (viewportHeight - usableTop) / (2 * (rect.height || 1));
+        const mobileTargetAtTop = 0.5;
+        const mobileOffset = centeredAtTop - mobileTargetAtTop;
+        const mobileScrollRatio = centeredRatio - mobileOffset;
         const scrollRatio = (viewportHeight - rect.top) / (viewportHeight + rect.height);
-        updateHeroFromRatio(isMobileLayout.matches ? centeredRatio : scrollRatio);
+        updateHeroFromRatio(isMobileLayout.matches ? mobileScrollRatio : scrollRatio);
       }
 
       splitFace.addEventListener("mousemove", function (event) {
         const rect = splitFace.getBoundingClientRect();
         const position = isMobileLayout.matches ? (event.clientY - rect.top) : (event.clientX - rect.left);
         const length = isMobileLayout.matches ? rect.height : rect.width;
+        hasUserDrivenSplit = true;
         lastPointerMoveAt = Date.now();
         updateHeroFromRatio(position / (length || 1));
       });
@@ -141,6 +219,7 @@
 
       window.addEventListener("scroll", function () {
         if (Date.now() - lastPointerMoveAt < 140) return;
+        hasUserDrivenSplit = true;
         updateHeroFromScroll();
       }, { passive: true });
 
@@ -160,7 +239,8 @@
         }, { passive: true });
 
         splitFace.addEventListener("touchmove", function (event) {
-          const currentAxis = isMobileLayout.matches ? event.touches[0].clientY : event.touches[0].clientX;
+          hasUserDrivenSplit = true;
+            const currentAxis = isMobileLayout.matches ? event.touches[0].clientY : event.touches[0].clientX;
           const delta = currentAxis - touchStartAxis;
           const rect = splitFace.getBoundingClientRect();
           const axisLength = isMobileLayout.matches ? rect.height : rect.width;
