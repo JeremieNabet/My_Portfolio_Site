@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jérémie Nabet | Designer & Coder</title>
+  <meta name="description" content="Portfolio de Jérémie Nabet, Senior Salesforce Full Stack Developer et créateur d'expériences web et mobiles.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicons/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="top">
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="logo" href="#top" aria-label="Retour en haut de page">
+        <span class="logo-badge" aria-hidden="true">JN</span>
+        <span class="logo-name" aria-hidden="true" data-first-name="Jeremie Nabet"></span>
+      </a>
+      <button class="menu-toggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="mainNav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-nav" id="mainNav">
+        <span class="nav-label" aria-hidden="true">Pages</span>
+        <a href="./about.html">about</a>
+        <a href="#work">portfolio</a>
+        <a href="#contact">contact</a>
+        <span class="nav-label nav-label-languages" aria-hidden="true">Langues</span>
+        <a class="lang-link" href="/us/">en</a>
+        <a class="lang-link" href="/he/">he</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero scroll-section" data-scroll-section>
+      <div class="container">
+        <div class="split-face" id="splitFace">
+          <a class="panel panel-left" href="#contact"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-left">designer</h1><p class="dynamic-text dynamic-text-left">Product design, UI systems et expériences orientées usage réel.</p></div></a>
+          <a class="panel panel-right" href="./about.html"><div class="panel-copy"><h1 class="dynamic-text dynamic-text-right"><span>&lt;</span>coder<span>&gt;</span></h1><p class="dynamic-text dynamic-text-right">Développement propre, scalable et performant pour le web et Salesforce.</p></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="section-dark scroll-section" data-scroll-section>
+      <div class="container">
+        <div class="section-title"><h2>Some of my latest work</h2></div>
+        <ul class="work-grid">
+          <li class="work-card">
+            <iframe src="https://www.rubens-pizza.com/fr" title="Ruben's Pizza" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="work-copy"><h3>Ruben's Pizza</h3><p>Site vitrine design et integration.</p><a class="work-link" href="https://www.rubens-pizza.com" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
+          </li>
+          <li class="work-card">
+            <iframe src="https://www.elsa-ruben.com/fr" title="Elsa & Ruben" loading="lazy" scrolling="no" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            <div class="work-copy"><h3>Elsa & Ruben</h3><p>Site evenementiel premium et responsive.</p><a class="work-link" href="https://www.elsa-ruben.com" target="_blank" rel="noopener noreferrer">Voir le site</a></div>
+          </li>
+          <li class="work-card">
+            <a href="./bmky-app.html"><img src="../assets/BMKY_app/BMKY_image.jpeg" alt="Application Flutter BMKY Beth Amidrash"></a>
+            <div class="work-copy"><h3>Beth Amidrash App</h3><p>Application CRM Flutter connectee a Salesforce pour piloter contacts, actions, paiements et suivi.</p><a class="work-link" href="./bmky-app.html">Voir le projet</a></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact" class="section-contact scroll-section" data-scroll-section>
+      <div class="container split-content">
+        <div class="text-col"><h2>contact.</h2><p class="intro">Parlons de ton projet Salesforce, web ou mobile.</p><p>Donne-moi le contexte, tes objectifs et ton timing. Je reviens vers toi rapidement avec une proposition claire et actionnable.</p></div>
+        <div class="media-col">
+          <form id="contactForm" class="contact-form" method="post" action="/api/send-mail">
+            <div class="form-grid">
+              <div class="field"><label for="fullName">Nom complet *</label><input id="fullName" name="fullName" required></div>
+              <div class="field"><label for="phone">Téléphone *</label><input id="phone" name="phone" required></div>
+              <div class="field"><label for="company">Entreprise</label><input id="company" name="company"></div>
+              <div class="field"><label for="serviceType">Type de service *</label><select id="serviceType" name="serviceType" required><option value="">Sélectionnez</option><option value="salesforce">Salesforce</option><option value="web">Site web</option><option value="mobile">Application mobile</option><option value="autre">Autre</option></select></div>
+              <div class="field full"><label for="message">Message</label><textarea id="message" name="message" placeholder="Décris ton besoin, tes objectifs et ton délai."></textarea></div>
+            </div>
+            <button type="submit" class="submit-btn">Envoyer la demande</button>
+            <p id="formStatus" class="form-status-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-row">
+      <p>© 2026 Jérémie Nabet</p>
+      <a class="back-to-top-arrow" href="#top" aria-label="Remonter en haut"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5.5 4.75 12.75l1.5 1.5L11 9.5V19h2V9.5l4.75 4.75 1.5-1.5L12 5.5z"/></svg></a>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".site-nav");
+    const logo = document.querySelector(".logo");
+    const logoName = logo ? logo.querySelector(".logo-name") : null;
+    if (toggle && nav) { toggle.addEventListener("click", function () { const isOpen = nav.classList.toggle("open"); document.body.classList.toggle("nav-open", isOpen); toggle.setAttribute("aria-expanded", isOpen ? "true" : "false"); }); nav.querySelectorAll("a").forEach(function (link) { link.addEventListener("click", function () { nav.classList.remove("open"); document.body.classList.remove("nav-open"); toggle.setAttribute("aria-expanded", "false"); }); }); }
+    if (logo && logoName) { logo.addEventListener("click", function () { logo.classList.remove("is-rolling"); void logo.offsetWidth; logo.classList.add("is-rolling"); logoName.textContent = ""; const n = logoName.dataset.firstName || "Jeremie Nabet"; for (let i = 1; i <= n.length; i += 1) window.setTimeout(() => logoName.textContent = n.slice(0, i), i * 35); window.setTimeout(() => logoName.textContent = "", 3600); }); }
+  </script>
+</body>
+</html>

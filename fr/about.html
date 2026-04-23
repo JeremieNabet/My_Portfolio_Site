@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Jérémie Nabet</title>
+  <meta name="description" content="À propos de Jérémie Nabet, Senior Salesforce Full Stack Developer spécialisé en architecture, web et mobile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicons/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="top">
+  <header class="site-header"><div class="container header-row"><a class="logo" href="/fr/">Jérémie Nabet</a><button class="menu-toggle" aria-label="Afficher le menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button><nav class="site-nav" id="mainNav"><span class="nav-label" aria-hidden="true">Pages</span><a href="./about.html">about</a><a href="/fr/#work">portfolio</a><a href="/fr/#contact">contact</a><span class="nav-label nav-label-languages" aria-hidden="true">Langues</span><a class="lang-link" href="/us/">en</a><a class="lang-link" href="/he/">he</a></nav></div></header>
+  <main>
+    <section class="section-light scroll-section is-visible"><div class="container split-content"><div class="text-col"><h2>about.</h2><p class="intro">Je suis Jérémie Nabet, Senior Salesforce Full Stack Developer basé en Israël.</p><p>J’accompagne les équipes produit et techniques pour transformer des besoins complexes en solutions fiables, lisibles et maintenables.</p></div><div class="media-col"><img class="about-photo" src="../assets/IMG_8999.JPG" alt="Photo de Jérémie Nabet"></div></div></section>
+    <section class="section-contact scroll-section is-visible"><div class="container split-content"><div class="text-col"><h2>my approach.</h2><p class="intro">Concevoir simple, livrer vite, maintenir propre.</p><p>Je privilégie les architectures claires et les choix techniques justifiés.</p></div><div class="text-col"><h2>expertise.</h2><p class="intro">Salesforce, web, mobile.</p><p>Architecture, delivery et accompagnement technique.</p></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-row"><p>© 2026 Jérémie Nabet</p><a class="back-to-top-arrow" href="#top" aria-label="Remonter en haut"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5.5 4.75 12.75l1.5 1.5L11 9.5V19h2V9.5l4.75 4.75 1.5-1.5L12 5.5z"/></svg></a></div></footer>
+  <script>const toggle=document.querySelector(".menu-toggle");const nav=document.querySelector(".site-nav");if(toggle&&nav){toggle.addEventListener("click",function(){const isOpen=nav.classList.toggle("open");document.body.classList.toggle("nav-open",isOpen);toggle.setAttribute("aria-expanded",isOpen?"true":"false");});nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){nav.classList.remove("open");document.body.classList.remove("nav-open");toggle.setAttribute("aria-expanded","false");});});}</script>
+</body>
+</html>

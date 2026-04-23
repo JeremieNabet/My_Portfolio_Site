@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Jeremie Nabet</title>
+  <meta name="description" content="About Jeremie Nabet, Senior Salesforce Full Stack Developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicons/favicon.svg">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="top">
+  <header class="site-header"><div class="container header-row"><a class="logo" href="/us/">Jeremie Nabet</a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mainNav"><span></span><span></span><span></span></button><nav class="site-nav" id="mainNav"><span class="nav-label" aria-hidden="true">Pages</span><a href="./about.html">about</a><a href="/us/#work">portfolio</a><a href="/us/#contact">contact</a><span class="nav-label nav-label-languages" aria-hidden="true">Languages</span><a class="lang-link" href="/fr/">fr</a><a class="lang-link" href="/he/">he</a></nav></div></header>
+  <main>
+    <section class="section-light scroll-section is-visible"><div class="container split-content"><div class="text-col"><h2>about.</h2><p class="intro">I am Jeremie Nabet, Senior Salesforce Full Stack Developer based in Israel.</p><p>I help product and engineering teams turn complex requirements into reliable and maintainable solutions.</p></div><div class="media-col"><img class="about-photo" src="../assets/IMG_8999.JPG" alt="Jeremie Nabet"></div></div></section>
+    <section class="section-contact scroll-section is-visible"><div class="container split-content"><div class="text-col"><h2>approach.</h2><p class="intro">Design simple, ship fast, keep it clean.</p></div><div class="text-col"><h2>expertise.</h2><p class="intro">Salesforce, web, mobile.</p></div></div></section>
+  </main>
+  <footer class="site-footer"><div class="container footer-row"><p>© 2026 Jeremie Nabet</p><a class="back-to-top-arrow" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5.5 4.75 12.75l1.5 1.5L11 9.5V19h2V9.5l4.75 4.75 1.5-1.5L12 5.5z"/></svg></a></div></footer>
+  <script>const toggle=document.querySelector(".menu-toggle");const nav=document.querySelector(".site-nav");if(toggle&&nav){toggle.addEventListener("click",function(){const isOpen=nav.classList.toggle("open");document.body.classList.toggle("nav-open",isOpen);toggle.setAttribute("aria-expanded",isOpen?"true":"false");});nav.querySelectorAll("a").forEach(function(link){link.addEventListener("click",function(){nav.classList.remove("open");document.body.classList.remove("nav-open");toggle.setAttribute("aria-expanded","false");});});}</script>
+</body>
+</html>

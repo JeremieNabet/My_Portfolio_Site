@@ -29,8 +29,8 @@
         <a href="#work">portfolio</a>
         <a href="#contact">contact</a>
         <span class="nav-label nav-label-languages" aria-hidden="true">Langues</span>
-        <a class="lang-link" href="./index-en.html">en</a>
-        <a class="lang-link" href="./index-he.html">he</a>
+        <a class="lang-link" href="/us/">en</a>
+        <a class="lang-link" href="/he/">he</a>
       </nav>
     </div>
   </header>
@@ -358,7 +358,9 @@
       updateHeroFromScroll();
     }
 
-    if (scrollSections.length > 0) {
+    const enableScrollAnimations = !window.matchMedia("(max-width: 920px)").matches;
+    if (scrollSections.length > 0 && "IntersectionObserver" in window && enableScrollAnimations) {
+      document.body.classList.add("js-scroll-animations");
       const observer = new IntersectionObserver(
         function (entries) {
           entries.forEach(function (entry) {

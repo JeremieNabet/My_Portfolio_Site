@@ -20,6 +20,7 @@ body {
   font-family: "Inter", sans-serif;
   color: var(--text);
   background: #fff;
+  overflow-x: hidden;
 }
 
 a {
@@ -629,6 +630,12 @@ body.nav-open .menu-toggle span:nth-child(3) {
 }
 
 .scroll-section {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.js-scroll-animations .scroll-section {
   opacity: 0;
   transform: translateY(46px) scale(0.985);
   filter: blur(6px);
@@ -639,7 +646,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
   transition-delay: var(--section-delay, 0ms);
 }
 
-.scroll-section.is-visible {
+.js-scroll-animations .scroll-section.is-visible {
   opacity: 1;
   transform: translateY(0) scale(1);
   filter: blur(0);
@@ -769,14 +776,14 @@ body.nav-open .menu-toggle span:nth-child(3) {
       #23272d calc(var(--split) * 100%),
       #23272d 100%
     );
-    transform: translateX(calc(var(--hero-shift) * 12px));
-    transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+    transform: none;
+    transition: none;
   }
 
-  .scroll-section {
-    transform: translateY(32px) scale(0.99);
-    filter: blur(4px);
-    transition-duration: 620ms;
+  .js-scroll-animations .scroll-section {
+    transform: translateY(24px);
+    filter: blur(2px);
+    transition-duration: 460ms;
   }
 
   .panel {
@@ -784,6 +791,22 @@ body.nav-open .menu-toggle span:nth-child(3) {
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 28px 20px;
+  }
+
+  .panel-copy {
+    width: min(100%, 420px);
+    max-width: 100%;
+  }
+
+  .panel h1 {
+    font-size: clamp(2rem, 9vw, 2.9rem);
+    overflow-wrap: anywhere;
+  }
+
+  .panel p {
+    font-size: 0.95rem;
+    line-height: 1.45;
   }
 
   .split-face::after {
@@ -818,6 +841,7 @@ body.nav-open .menu-toggle span:nth-child(3) {
 
   .split-content {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .work-grid {
@@ -839,6 +863,59 @@ body.nav-open .menu-toggle span:nth-child(3) {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+    padding-bottom: 16px;
+  }
+
+  .split-face {
+    min-height: 460px;
+  }
+
+  .panel {
+    min-height: auto;
+    padding: 22px 16px;
+  }
+
+  .panel h1 {
+    font-size: clamp(1.65rem, 10vw, 2.3rem);
+    line-height: 1.08;
+  }
+
+  .panel p {
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+
+  .section-light,
+  .section-dark,
+  .section-contact {
+    padding: 52px 0;
+  }
+
+  .work-card img,
+  .work-card iframe,
+  .work-placeholder {
+    height: 172px;
+  }
+
+  .work-copy {
+    padding: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-face,
+  .scroll-section,
+  .logo.is-rolling .logo-badge {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
   }
 }
 
